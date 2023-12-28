@@ -1,4 +1,5 @@
 package Hooks;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
@@ -10,8 +11,11 @@ import java.net.URL;
 
 public class Hook {
 
+    private Hook(){}
+
+
     @BeforeClass
-    public AndroidDriver Setup() throws MalformedURLException {
+    public static AndroidDriver getDriver() throws MalformedURLException {
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android"); //optional- if it's not mentioned then it fine too as it
                                             //will automatically be covered through UiAutomator2Options
