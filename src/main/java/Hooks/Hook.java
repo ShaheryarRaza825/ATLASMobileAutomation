@@ -1,5 +1,4 @@
 package Hooks;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
