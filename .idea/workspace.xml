@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Code Added for Android Driver setup">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Locators/LoginLocators.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" afterDir="false" />
+    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Added code for Utils &#10;Added Locators">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Hooks/Hook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +42,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_directory_selection": "C:/Users/FaizanJunani/Desktop/Appium Automation/AtlasMobileJava/src/test/java",
     "last_opened_file_path": "C:/Users/FaizanJunani/Desktop/AutomationTraining/TrainingProject-2"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Hooks" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -74,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703760302108</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added code for Utils &#10;Added Locators">
+      <created>1703766577798</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703766577798</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,6 +105,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dependency added for appium&#10;class created for appium connection" />
     <MESSAGE value="Code Added for Android Driver setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code Added for Android Driver setup" />
+    <MESSAGE value="Added code for Utils &#10;Added Locators" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added code for Utils &#10;Added Locators" />
   </component>
 </project>

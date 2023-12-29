@@ -17,26 +17,26 @@ public class SupportMethods {
         if (path.contains("/hierarchy/") || path.contains("//android.view"))
         {
             new WebDriverWait(driver, Duration.ofSeconds(Timeout)).
-                    until(d => d.FindElement(By.XPath(path)));
+                    until(d -> d.findElement(By.xpath(path)));
         }
         else if (path.contains("com.atlashxm"))
         {
-            new WebDriverWait(driver, Duration.ofSeconds(Timeout)).until(d => d.FindElement(By.Id(path)));
+            new WebDriverWait(driver, Duration.ofSeconds(Timeout)).until(d -> d.findElement(By.id(path)));
         }
     }
     public void sendKeysByPath(AndroidDriver driver, String path, String value)
     {
         if (path.contains("/hierarchy/") || path.contains("//android.view"))
         {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-            WebElement element = wait.until(d => d.FindElement(By.xpath(path)));
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            WebElement element = wait.until(d -> d.findElement(By.xpath(path)));
             element.clear();
             element.sendKeys(value);
         }
         else if (path.contains("com.atlashxm"))
         {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-            WebElement element = wait.until(d => d.FindElement(By.Id(path)));
+            WebElement element = wait.until(d -> d.findElement(By.id(path)));
             element.clear();
             element.sendKeys(value);
         }
@@ -61,13 +61,13 @@ public class SupportMethods {
         if (path.contains("/hierarchy/") || path.contains("//android.view"))
         {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-            WebElement element = wait.until(d => d.FindElement(By.xpath(path)));
+            WebElement element = wait.until(d -> d.findElement(By.xpath(path)));
             element.click();
         }
         else if (path.contains("com.atlashxm")||path.contains("android:id"))
         {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-            WebElement element = wait.until(d => d.FindElement(By.id(path)));
+            WebElement element = wait.until(d -> d.findElement(By.id(path)));
             element.click();
         }
 

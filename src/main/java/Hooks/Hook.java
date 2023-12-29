@@ -1,11 +1,10 @@
 package Hooks;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -13,8 +12,7 @@ public class Hook {
 
     private Hook(){}
 
-
-    @BeforeClass
+    @BeforeTest
     public static AndroidDriver getDriver() throws MalformedURLException {
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android"); //optional- if it's not mentioned then it fine too as it
