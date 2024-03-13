@@ -12,24 +12,20 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.time.Duration;
 import java.util.Properties;
+import Utils.DriverManager;
 
 public class SupportMethods {
 
     SoftAssert softAssert = new SoftAssert();
+    DriverManager dm = new DriverManager();
     Hook hook;
-    public AndroidDriver driver = hook.getDriver();
-    long Timeout = 20;
-    public SupportMethods(AndroidDriver driver) throws MalformedURLException {
-        try {
-            this.driver = driver;
-        }
-        catch(Exception e)
-        {
-            System.out.println(e.getMessage());
-        }
+    public AndroidDriver driver = dm.getDriver();
+    long Timeout = 30;
+    public SupportMethods() throws MalformedURLException {
+
     }
 
-    public void waitForVisibilityByPath(String path)
+    public void     waitForVisibilityByPath(String path)
     {
 
         if (path.contains("/hierarchy/") || path.contains("//android.view"))
@@ -60,17 +56,28 @@ public class SupportMethods {
         }
 
     }
-    public void verifyElement(String Id, String message) throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
-        if(wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(Id))).getText().equals(message))
-        {
-            return;
-        }
-        else
-        {
-            throw new Exception("Text mismatched.");
-            //System.out.println(driver.findElement(By.id((Id))).getText());
+    public void verifyElement(String path, String expectedValue) {
+        try {
+            if (path.contains("/hierarchy/") || path.contains("//android.view"))
+            {
+                new WebDriverWait(driver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
+                        .visibilityOfElementLocated(By.xpath(path)));
+                WebElement element = driver.findElement(By.xpath(path));
+                String actualText = element.getText();
+                System.out.println(actualText);
+                softAssert.assertEquals(actualText, expectedValue);
+            }
+            else if (path.contains("com.atlashxm")) {
+                new WebDriverWait(driver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
+                        .visibilityOfElementLocated(By.id(path)));
+                WebElement element = driver.findElement(By.id(path));
+                String actualText = element.getText();
+                System.out.println(actualText);
+                softAssert.assertEquals(actualText, expectedValue);
+            }
 
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
 
     }
@@ -90,7 +97,7 @@ public class SupportMethods {
         }
 
     }
-        public String getvaluesfromconfigfile(String value) throws IOException, IOException {
+        public String getvaluesfromconfigfile(String value) throws IOException {
             FileReader fr = new FileReader("C:\\Users\\FaizanJunani\\Desktop\\AutomationTraining\\TrainingProject-2\\TrainingProject\\src\\Config.properties");
             Properties prop = new Properties();
             prop.load(fr);
