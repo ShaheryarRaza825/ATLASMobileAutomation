@@ -1,9 +1,7 @@
 package StepDefinition;
 
 import Hooks.Hook;
-import Pages.LoginPage;
-import Pages.TimeOffPage;
-import io.appium.java_client.android.AndroidDriver;
+import Pages.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,6 +16,9 @@ public class StepDefinition {
     //public AndroidDriver driver = hook.getDriver();
     TimeOffPage tp = new TimeOffPage();
     LoginPage lp = new LoginPage();
+    TimerWidgetPage twp = new TimerWidgetPage();
+    TimesheetPage tsp = new TimesheetPage();
+    ExpenseRequestorPage erp = new ExpenseRequestorPage();
 
     public StepDefinition() throws MalformedURLException {
     }
@@ -33,9 +34,25 @@ public class StepDefinition {
         {
             lp.userIsPresentOnSplashScreen();
         }
+        else if(keyword.equals("dashboard"))
+        {
+            twp.userOnDashboard();
+        }
         else if(keyword.equals("request timeoff"))
         {
-            //tp.UserIsPresentOnPTOPage();
+            tp.UserIsPresentOnPTOPage();
+        }
+        else if(keyword.equals("timesheet"))
+        {
+            tsp.userIsPresentOnTimesheet();
+        }
+        else if(keyword.equals("edit timesheet"))
+        {
+            tsp.userPresentOnEditTimesheet();
+        }
+        else if(keyword.equals("expense dashboard"))
+        {
+            erp.userPresentOnExpensePage();
         }
     }
 
@@ -49,17 +66,33 @@ public class StepDefinition {
         {
             lp.setPassword("Password");
         }
-        else if(keyword.equals("add hours"))
+        else if(keyword.equals("hours"))
         {
-           // tp.EnterHours();
+            tp.EnterHours("Hours1","Hours2");
         }
-        else if(keyword.equals("comments"))
+        else if(keyword.equals("PTOcomments"))
         {
-            //tp.enterCommentsForPTO();
+            tp.enterCommentsForPTO();
+        }
+        else if(keyword.equals("expense title"))
+        {
+            erp.enterExpenseTitle();
+        }
+        else if(keyword.equals("amount"))
+        {
+            erp.enterAmount();
+        }
+        else if(keyword.equals("VAT"))
+        {
+            erp.enterVAT();
+        }
+        else if(keyword.equals("Exp comments"))
+        {
+            erp.enterComments();
         }
     }
     @When("user clicks the {string} button")
-    public void user_clicks_the_button(String keyword) {
+    public void user_clicks_the_button(String keyword) throws InterruptedException {
         if(keyword.equals("login") )
         {
             lp.loginToApp();
@@ -72,38 +105,101 @@ public class StepDefinition {
            tp.UserNavigateToPTOPage();
         }
         else if(keyword.equals("add hours")){
-            //tp.UserVisitAddHoursPage();
+            tp.UserVisitAddHoursPage();
         }
         else if(keyword.equals("save")){
-           // tp.UserSavesHours();
+            tp.UserSavesHours();
         }
         else if(keyword.equals("submit")){
-         //   tp.UserSubmitsPTO();
+            tp.UserSubmitsPTO();
         }
-    }
-    @Then("user should be logged in successfully")
-    public void user_should_be_logged_in_successfully() {
-        lp.verifyUserLoggedIn();
+        else if(keyword.equals("clockin"))
+        {
+            twp.UserClocksIn();
+        }
+        else if(keyword.equals("clockout"))
+        {
+            twp.UserClocksOut();
+        }
+        else if(keyword.equals("timesheet tab"))
+        {
+            tsp.navigateToTimesheetTab();
+        }
+        else if(keyword.equals("timesheet arrow"))
+        {
+            tsp.openTimeSheetList();
+        }
+        else if(keyword.equals("edit timesheet"))
+        {
+            tsp.editTimesheet();
+        }
+        else if(keyword.equals("update"))
+        {
+            tsp.updatTime();
+        }
+        else if(keyword.equals("expenses tab"))
+        {
+            erp.navigateToExpenseTab();
+        }
+        else if(keyword.equals("new expense claim"))
+        {
+            erp.createNewExpense();
+        }
+        else if(keyword.equals("save continue"))
+        {
+            erp.clickSaveAndContinue();
+        }
+        else if(keyword.equals("submit expense"))
+        {
+            erp.submitExpense();
+        }
+
     }
 
     @And("user selects option for {string}")
-    public void userSelectsOptionFor(String keyword) {
-        if(keyword.equals("PTO"))
-        {
-            //tp.UserSelectsTimeOffType();
+    public void userSelectsOptionFor(String keyword) throws MalformedURLException {
+        if (keyword.equals("PTO")) {
+            tp.UserSelectsTimeOffType();
+        } else if (keyword.equals("FromDate")) {
+            tp.UserSelectsFromDate();
+        } else if (keyword.equals("ToDate")) {
+            tp.UserSelectsToDate();
+        } else if (keyword.equals("start time")) {
+            tsp.selectStartTime();
+        } else if (keyword.equals("end time")) {
+            tsp.selectEndTime();
         }
-        else if(keyword.equals("FromDate"))
-        {
-           // tp.UserSelectsFromDate();
+        else if(keyword.equals("date incurred")){
+            erp.selectDateIncurred();
         }
-        else if(keyword.equals("ToDate"))
-        {
-            //tp.UserSelectsToDate();
+        else if(keyword.equals("category")){
+            erp.selectCategory();
+        }
+        else if(keyword.equals("attachment")){
+            erp.selectAttachment();
         }
     }
 
     @Then("PTO should be submitted successfully")
     public void ptoShouldBeSubmittedSuccessfully() {
+        tp.ConfirmSubmissionOfPTO();
+    }
+    @Then("user should be {string} successfully")
+    public void userShouldBeSuccessfully(String keyword) throws InterruptedException {
 
+        if(keyword.equals("logged in")){
+            lp.verifyUserLoggedIn();
+        }
+        else if(keyword.equals("clocked in")){
+            twp.UserClockedInSuccessfully();
+        }
+        else if(keyword.equals("clocked out")){
+            twp.UserClockedOutSuccessfully();
+        }
+
+    }
+
+    @Then("timesheet is submitted successfully")
+    public void timesheetIsSubmittedSuccessfully() {
     }
 }

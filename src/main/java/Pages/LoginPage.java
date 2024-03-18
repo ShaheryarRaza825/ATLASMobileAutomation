@@ -48,7 +48,8 @@ public class LoginPage {
     {
         sm.clickByPath(loginLocators.loginBtn);
     }
-    public void verifyUserLoggedIn(){
+    public void verifyUserLoggedIn() throws InterruptedException {
+        Thread.sleep(5000);
         sm.verifyElement(loginLocators.userOnDashboard, "Hi");
     }
 

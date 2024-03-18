@@ -8,4 +8,4 @@ Feature:
   And user enters value in "email" field
   And user enters value in "password" field
   Then user clicks the "login" button
-  Then user should be logged in successfully
+  Then user should be "logged in" successfully
