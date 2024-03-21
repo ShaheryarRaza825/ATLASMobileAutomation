@@ -58,9 +58,12 @@ public class ExpenseRequestorPage {
     }
     public void selectAttachment()
     {
+        sm.ScrollUp(erl.scrollExpenseTab,100);
         sm.clickByPath(erl.btnOpenAttachmentSelection);
         sm.clickByPath(erl.btnSelectUploadOption);
         sm.clickByPath(erl.selectAttachment);
+        sm.ScrollUp(erl.scrollExpenseTab,50);
+        sm.waitForElementToDisappear(erl.progressBar);
     }
     public void enterComments()
     {
@@ -69,6 +72,11 @@ public class ExpenseRequestorPage {
     public void submitExpense()
     {
         sm.clickByPath(erl.btnSubmitExepnseClaim);
+    }
+    public void expenseSubmittedSuccessfully()
+    {
+        sm.verifyElement(erl.confirmSubmission,"submitted Successfully");
+        sm.clickByPath(erl.btnBackToExpenseList);
     }
 }
 

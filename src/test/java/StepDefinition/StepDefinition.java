@@ -202,4 +202,9 @@ public class StepDefinition {
     @Then("timesheet is submitted successfully")
     public void timesheetIsSubmittedSuccessfully() {
     }
+
+    @And("Expense should be submitted")
+    public void expenseShouldBeSubmitted() {
+        erp.expenseSubmittedSuccessfully();
+    }
 }

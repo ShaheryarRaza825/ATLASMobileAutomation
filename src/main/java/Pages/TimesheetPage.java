@@ -41,7 +41,7 @@ public class TimesheetPage {
     public void selectEndTime()
     {
         sm.clickByPath(tl.openEndTimePicker);
-        sm.ScrollUp(tl.timeNumberPicker);
+        sm.ScrollUp(tl.timeNumberPicker, 80);
         sm.clickByPath(tl.confirmStartEndTime);
     }
     public void updatTime()

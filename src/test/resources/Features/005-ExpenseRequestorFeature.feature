@@ -16,5 +16,6 @@ Feature: Expense Requestor
     And user selects option for "attachment"
     And user enters value in "Exp comments" field
     Then user clicks the "submit expense" button
+    And Expense should be submitted
 
 

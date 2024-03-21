@@ -88,10 +88,13 @@ public class SupportMethods {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
             WebElement element = wait.until(d -> d.findElement(By.xpath(path)));
             element.click();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
         } else if (path.contains("com.atlashxm") || path.contains("android:id")) {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
             WebElement element = wait.until(d -> d.findElement(By.id(path)));
             element.click();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         }
 
     }
@@ -136,14 +139,14 @@ public class SupportMethods {
             System.out.println(element.getText());
         }
     }
-    public void ScrollUp(String path) {
+    public void ScrollUp(String path, int scroll ) {
         if (path.contains("/hierarchy/") || path.contains("//android.view"))
         {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
             RemoteWebElement element = (RemoteWebElement) wait.until(d -> d.findElement(By.xpath(path)));
             driver.executeScript("gesture: swipe",
                     ImmutableMap.of("elementId",element.getId(),
-                            "percentage", 50,"direction","up"));
+                            "percentage", scroll,"direction","up"));
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         }
         else if(path.contains("com.atlashxm"))
@@ -152,7 +155,7 @@ public class SupportMethods {
             RemoteWebElement element = (RemoteWebElement) wait.until(d -> d.findElement(By.id(path)));
             driver.executeScript("gesture: swipe",
                     ImmutableMap.of("elementId",element.getId(),
-                            "percentage", 50,"direction","up"));
+                            "percentage", scroll,"direction","up"));
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         }
@@ -166,25 +169,27 @@ public class SupportMethods {
             RemoteWebElement element = (RemoteWebElement) wait.until(d -> d.findElement(By.xpath(path)));
             driver.executeScript("gesture: swipe",
                     ImmutableMap.of("elementId",element.getId(),
-                            "percentage", 50,"direction","down"));
+                            "percentage", -80,"direction","down"));
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         }
-        else if(path.contains("com.atlashxm"))
-        {
+        else if(path.contains("com.atlashxm")) {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
             RemoteWebElement element = (RemoteWebElement) wait.until(d -> d.findElement(By.id(path)));
             driver.executeScript("gesture: swipe",
-                    ImmutableMap.of("elementId",element.getId(),
-                            "percentage", -50,"direction","down"));
+                    ImmutableMap.of("elementId", element.getId(),
+                            "percentage", -50, "direction", "down"));
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         }
-
-
     }
     public void selectDateFromCalendar(String path) {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
             WebElement element = wait.until(d -> d.findElement(AppiumBy.accessibilityId(path)));
             element.click();
+        }
+        public void waitForElementToDisappear(String path)
+        {
+            new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions
+                    .invisibilityOfElementLocated(By.xpath(path)));
         }
 }
