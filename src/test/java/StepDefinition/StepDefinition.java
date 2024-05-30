@@ -1,6 +1,7 @@
 package StepDefinition;
 
 import Hooks.Hook;
+import Locators.OnboardingLocators;
 import Pages.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -19,6 +20,7 @@ public class StepDefinition {
     TimerWidgetPage twp = new TimerWidgetPage();
     TimesheetPage tsp = new TimesheetPage();
     ExpenseRequestorPage erp = new ExpenseRequestorPage();
+    WSEOnboardingPage wop = new WSEOnboardingPage();
 
     public StepDefinition() throws MalformedURLException {
     }
@@ -207,4 +209,144 @@ public class StepDefinition {
     public void expenseShouldBeSubmitted() {
         erp.expenseSubmittedSuccessfully();
     }
+    @Given("user is present on splash screen page")
+    public void user_is_present_on_splash_screen_page() {
+        lp.userIsPresentOnSplashScreen();
+    }
+
+    @Then("user clicks the login button button on splash screen")
+    public void user_clicks_the_login_button_button_on_splash_screen() {
+        lp.SplashScreenLogin();
+    }
+
+    @Given("user is present on login page")
+    public void user_is_present_on_login_page() {
+        lp.userIsPresentOnLoginPage();
+    }
+
+    @Given("user enters value in email field")
+    public void user_enters_value_in_email_field() throws IOException {
+        lp.setUserName("Email");
+    }
+
+    @Given("user enters value in password field")
+    public void user_enters_value_in_password_field() throws IOException {
+        lp.setPassword("Password");
+    }
+
+    @Then("user clicks the login button")
+    public void user_clicks_the_login_button() {
+        lp.loginToApp();
+    }
+
+    @Then("user should be logged in successfully")
+    public void user_should_be_logged_in_successfully() throws InterruptedException {
+        lp.verifyUserLoggedIn();
+    }
+    @Given("user is present on dashboard page")
+    public void user_is_present_on_dashboard_page() {
+        twp.userOnDashboard();
+    }
+
+    @Given("user clicks the clockin button")
+    public void user_clicks_the_clockin_button() {
+        twp.UserClocksIn();
+    }
+
+    @Then("user should be clocked in successfully")
+    public void user_should_be_clocked_in_successfully() {
+        twp.UserClockedInSuccessfully();
+    }
+    @Given("user clicks the clockout button")
+    public void user_clicks_the_clockout_button() {
+        twp.UserClocksOut();
+    }
+
+    @Then("user should be clocked out successfully")
+    public void user_should_be_clocked_out_successfully() {
+        twp.UserClockedOutSuccessfully();
+    }
+
+    @When("user clicks the request timeoff button")
+    public void user_clicks_the_request_timeoff_button() throws InterruptedException {
+        tp.UserNavigateToPTOPage();
+
+    }
+
+    @When("user is present on request timeoff page")
+    public void user_is_present_on_request_timeoff_page() {
+        tp.UserIsPresentOnPTOPage();
+
+    }
+
+    @When("user selects option for PTO")
+    public void user_selects_option_for_pto() {
+        tp.UserSelectsTimeOffType();
+    }
+
+    @When("user selects option for FromDate")
+    public void user_selects_option_for_from_date() {
+            tp.UserSelectsFromDate();
+    }
+
+    @When("user selects option for ToDate")
+    public void user_selects_option_for_to_date() {
+        tp.UserSelectsToDate();
+    }
+
+    @When("user clicks the add hours button")
+    public void user_clicks_the_add_hours_button() {
+       tp.UserVisitAddHoursPage();
+    }
+
+    @When("user enters value in hours field")
+    public void user_enters_value_in_hours_field() throws IOException {
+        tp.EnterHours("Hours1","Hours2");
+    }
+
+    @When("user clicks the save button")
+    public void user_clicks_the_save_button() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @When("user enters value in PTOcomments field")
+    public void user_enters_value_in_pt_ocomments_field() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @When("user clicks the submit button")
+    public void user_clicks_the_submit_button() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+
+    @Given("user is present on onboarding landing page")
+    public void userIsPresentOnOnboardingLandingPage() {
+        wop.verifyUserIsPresentOnOnboardingLandingPage();
+    }
+
+    @Then("user should click the Continue button below")
+    public void userShouldClickTheContinueButtonBelow() {
+        wop.continueToOnboarding();
+    }
+
+    @Then("user can skip uploading profile picture")
+    public void userCanSkipUploadingProfilePicture() {
+        wop.skipProfilePic();
+    }
+
+    @And("user will be present on Profile tab")
+    public void userWillBePresentOnProfileTab() {
+        wop.userPresentOnProfile("Profile");
+    }
+
+    @Then("user enters values for the fields on Profile tab")
+    public void userEntersValuesForTheFieldsOnProfileTab() throws InterruptedException {
+        wop.selectTitle("Mr.");
+        wop.selectDateOfBirth("2001","");
+    }
 }
+

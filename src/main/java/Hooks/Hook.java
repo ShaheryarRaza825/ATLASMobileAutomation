@@ -1,8 +1,12 @@
 package Hooks;
+import Utils.SupportMethods;
 import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
+
+import java.io.IOException;
 import java.net.MalformedURLException;
+import java.sql.Driver;
 
 import Utils.DriverManager;
 
@@ -10,30 +14,27 @@ public class Hook {
 
     //public static AndroidDriver driver;
 
-    public Hook() {
+
+    public Hook() throws MalformedURLException {
     }
     @BeforeAll
-    public static void beforeAll() throws MalformedURLException {
-        DriverManager.setupDriver();
+    public static void beforeAll() throws IOException {
+        DriverManager.setupAndroidDriver();
+        //DriverManager.getWebDriver();
+       // writePropertiesToFile();
     }
-  /*  public static AndroidDriver getDriver() throws MalformedURLException {
-        if (driver == null) {
-            UiAutomator2Options options = new UiAutomator2Options();
-            options.setPlatformName("Android"); //optional- if it's not mentioned then it fine too as it
-            //will automatically be covered through UiAutomator2Options
-            options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2); //optional- if it's not mentioned then it fine too as it
-            //will automatically be covered through UiAutomator2Options
-            options.setDeviceName("emulator-5554");
-            //options.noReset();
-            options.setApp("C:\\Users\\FaizanJunani\\Desktop\\Appium Automation\\AtlasMobileJava\\src\\test\\resources\\apps\\app-UAT-debug 25.apk");
-            System.out.println("App Setup Done");
-            options.autoGrantPermissions();
-            System.out.println("Permissions Granted");
-            driver = new AndroidDriver(new URL("http://localhost:4723/"), options);
-            System.out.println("Driver Initialized");
-        }
-        return driver;
-    }*/
+    public static void writePropertiesToFile() throws IOException {
+        SupportMethods sm = new SupportMethods();
+        String[]userName;
+        userName = sm.RandomNameGenerator();
+
+        sm.writeValuesInConfigFile("FirstName",userName[0].toString());
+        sm.writeValuesInConfigFile("LastName",userName[1].toString());
+        String email = userName[0]+userName[1]+"@yopmail.com";
+        sm.writeValuesInConfigFile("WSEMail", email);
+        System.out.println("Properties written to file" +userName[0]+", "+userName[1]+", "+email);
+    }
+
 
 
 

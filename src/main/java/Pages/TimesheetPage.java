@@ -35,13 +35,13 @@ public class TimesheetPage {
     }
     public void selectStartTime() throws MalformedURLException {
         sm.clickByPath(tl.openStartTimePicker);
-        sm.ScrollDown(tl.timeNumberPicker);
+        sm.ScrollDown(tl.timeNumberPicker, 50);
         sm.clickByPath(tl.confirmStartEndTime);
     }
     public void selectEndTime()
     {
         sm.clickByPath(tl.openEndTimePicker);
-        sm.ScrollUp(tl.timeNumberPicker, 80);
+        sm.ScrollUp(tl.timeNumberPicker,50);
         sm.clickByPath(tl.confirmStartEndTime);
     }
     public void updatTime()
