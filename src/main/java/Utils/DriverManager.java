@@ -38,7 +38,6 @@ public class DriverManager {
         AndroidDriver driver = new AndroidDriver(new URL("http://localhost:4723/"), options);
         setAndroidDriver(driver);
         System.out.println("Driver Initialized");
-
     }
     public static void setAndroidDriver(AndroidDriver driver){
         mobileDriver = driver;

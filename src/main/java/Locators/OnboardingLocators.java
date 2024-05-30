@@ -19,4 +19,5 @@ public class OnboardingLocators {
     public String listGender = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[2]";
     public String btnSkipProfielPic = "com.atlashxm.uat:id/skip";
 
+
 }
