@@ -43,6 +43,5 @@ public class WSEOnboardingPage {
         sm.selectDateFromCalendar("30 May 2001",ol.listofDays);
         sm.clickByPath(ol.btnSelectYear);
 
-
     }
 }

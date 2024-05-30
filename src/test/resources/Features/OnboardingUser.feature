@@ -15,4 +15,3 @@ Feature:
     And user will be present on Profile tab
     Then user enters values for the fields on Profile tab
 
-
