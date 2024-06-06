@@ -343,10 +343,27 @@ public class StepDefinition {
         wop.userPresentOnProfile("Profile");
     }
 
-    @Then("user enters values for the fields on Profile tab")
-    public void userEntersValuesForTheFieldsOnProfileTab() throws InterruptedException {
+    @Then("user enters values for the fields on PersonalInformation tab")
+    public void userEntersValuesForTheFieldsOnPersonalInformationTab() throws InterruptedException {
         wop.selectTitle("Mr.");
-        wop.selectDateOfBirth("2001","");
+        wop.selectDateOfBirth(2001,6,15);
+        wop.selectMaritalStatus("Single");
+        wop.selectGender("Male");
+    }
+
+    @And("user clicks the continue button")
+    public void userClicksTheContinueButton() {
+        wop.ContinueToCitizenshipTab();
+    }
+
+    @Then("user enters values for the fields on CitizenshipInformation tab")
+    public void userEntersValuesForTheFieldsOnCitizenshipInformationTab() {
+        wop.selectCitizenship("Canada");
+        wop.enterNationalId("31314");
+    }
+
+    @Then("user enters the values for the fields on HomeAddress tab")
+    public void userEntersTheValuesForTheFieldsOnHomeAddressTab() {
     }
 }
 

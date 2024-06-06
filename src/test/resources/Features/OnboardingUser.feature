@@ -13,5 +13,10 @@ Feature:
     Then user should click the Continue button below
     Then user can skip uploading profile picture
     And user will be present on Profile tab
-    Then user enters values for the fields on Profile tab
+    Then user enters values for the fields on PersonalInformation tab
+    And user clicks the continue button
+    Then user enters values for the fields on CitizenshipInformation tab
+    And user clicks the continue button
+    Then user enters the values for the fields on HomeAddress tab
+    And user clicks the continue button
 

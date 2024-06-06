@@ -33,15 +33,75 @@ public class WSEOnboardingPage {
         System.out.println("Lets select the title now");
         sm.Tap(ol.dropdownTtile);
         System.out.println("Dropdown Open, now get the list");
-        sm.getListElementsbyPath(ol.listTitle,title);
+        sm.SelectListElementsbyPath(ol.listTitle,title);
     }
-    public void selectDateOfBirth(String year, String date) throws InterruptedException {
+    public void selectDateOfBirth(int expectedYear, int expectedMonth, int expectedDate) throws InterruptedException {
         System.out.println("Open Calendar");
         sm.clickByPath(ol.openCalendar);
         sm.clickByPath(ol.openYearList);
-        sm.selectYearFromCalendar("2001", ol.listofYears,ol.scrollYearList);
-        sm.selectDateFromCalendar("30 May 2001",ol.listofDays);
+        sm.selectYearFromCalendar(expectedYear, ol.listofYears,ol.scrollYearList);
+        sm.selectDateFromCalendar(expectedYear,expectedMonth,expectedDate,ol.listofDays);
         sm.clickByPath(ol.btnSelectYear);
+    }
+    public void selectMaritalStatus(String maritalStatus)
+    {
+        System.out.println("Lets select the Marital Status now");
+        sm.Tap(ol.dropdownMaritalStatus);
+        System.out.println("Dropdown Open, now get the list");
+        sm.SelectListElementsbyPath(ol.listMaritalStatus,maritalStatus);
+        System.out.println("Marital Status is selected");
+    }
+    public void selectGender(String gender)
+    {
+        sm.ScrollToElement(ol.scrollPersonalInfoTab);
+        System.out.println("Lets select the gender now");
+        sm.Tap(ol.dropdownGender);
+        System.out.println("Dropdown Open, now get the list");
+        sm.SelectListElementsbyPath(ol.listGender,gender);
+        System.out.println("Gender is Selected");
+    }
+    public void ContinueToCitizenshipTab()
+    {
+        sm.clickByPath(ol.btnContinue);
+    }
+    public void selectCitizenship(String expectedCitizenshipValue)
+    {
+        sm.Tap(ol.dropdownCountry);
+        sm.SelectListElementsbyPath(ol.listOfCountries,expectedCitizenshipValue);
+    }
+    public void enterNationalId(String expectedNationalIdValue)
+    {
+        sm.sendKeysByPath(ol.txtNationalId,expectedNationalIdValue);
+    }
+    public void ContinueToHomeAddressTab()
+    {
+        sm.clickByPath(ol.btnContinue);
+    }
+    public void selectHomeCountry(String expectedCitizenshipValue)
+    {
+        sm.Tap(ol.dropdownCountry);
+        sm.SelectListElementsbyPath(ol.listOfCountries,expectedCitizenshipValue);
+    }
+    public void enterCity(String expectedCityValue)
+    {
+
+    }
+    public void enterProvince(String expectedProvinceValue)
+    {
+
+    }
+    public void enterZipcode(String expectedZipcodeValue)
+    {
+
+    }  public void enterAddress1(String expectedAddress1Value)
+    {
+
+    }  public void enterAddress2(String expectedAddress2Value)
+    {
+
+    }
+    public void enterPhoneNumber(String expectedPhoneNumberValue, String expeectedCountryCodeValue)
+    {
 
     }
 }

@@ -3,6 +3,7 @@ package Utils;
 import Hooks.Hook;
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import org.ajbrown.namemachine.NameGenerator;
@@ -20,6 +21,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
@@ -56,7 +59,7 @@ public class SupportMethods {
             WebElement element = wait.until(d -> d.findElement(By.xpath(path)));
             element.clear();
             element.sendKeys(value);
-        } else if (path.contains("com.atlashxm")) {
+        } else if (path.contains("com.atlashxm")|| path.contains("android:id")) {
             WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
             WebElement element = wait.until(d -> d.findElement(By.id(path)));
             element.clear();
@@ -167,14 +170,14 @@ public class SupportMethods {
             RemoteWebElement element = (RemoteWebElement) wait.until(d -> d.findElement(By.xpath(path)));
             androidDriver.executeScript("gesture: swipe",
                     ImmutableMap.of("elementId", element.getId(),
-                            "percentage", scroll, "direction", "up", "speed", 60));
+                            "percentage", scroll, "direction", "up", "speed", 90));
             androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         } else if (path.contains("com.atlashxm") || path.contains("android:id")) {
             WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
             RemoteWebElement element = (RemoteWebElement) wait.until(d -> d.findElement(By.id(path)));
             androidDriver.executeScript("gesture: swipe",
                     ImmutableMap.of("elementId", element.getId(),
-                            "percentage", scroll, "direction", "up", "speed", 60));
+                            "percentage", scroll, "direction", "up", "speed", 90));
             androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         }
@@ -187,14 +190,14 @@ public class SupportMethods {
             RemoteWebElement element = (RemoteWebElement) wait.until(d -> d.findElement(By.xpath(path)));
             androidDriver.executeScript("gesture: swipe",
                     ImmutableMap.of("elementId", element.getId(),
-                            "percentage", scroll, "direction", "down", "speed", 60));
+                            "percentage", scroll, "direction", "down", "speed", 90));
             androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         } else if (path.contains("com.atlashxm") || path.contains("android:id")) {
             WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
             RemoteWebElement element = (RemoteWebElement) wait.until(d -> d.findElement(By.id(path)));
             androidDriver.executeScript("gesture: swipe",
                     ImmutableMap.of("elementId", element.getId(),
-                            "percentage", scroll, "direction", "down", "speed", 60));
+                            "percentage", scroll, "direction", "down", "speed", 90));
             androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         }
@@ -241,27 +244,39 @@ public class SupportMethods {
         }
     }
 
-    public void getListElementsbyPath(String path, String selectValue) {
-        if (path.contains("/hierarchy/") || path.contains("//android.view")) {
-            WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
-            List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(path)));
-            System.out.println("size of list is " + listOfElements.size());
-            for (WebElement e : listOfElements) {
-                if (e.getText().equals(selectValue)) {
-                    e.click();
-                    break;
+    public void SelectListElementsbyPath(String path, String selectValue) {
+        int attempts = 0;
+        boolean elementClicked = false;
+        while (!elementClicked && attempts < 3) {
+            try {
+                if (path.contains("/hierarchy/") || path.contains("//android.view")) {
+                    WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+                    List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(path)));
+                    System.out.println("size of list is " + listOfElements.size());
+                    for (WebElement e : listOfElements) {
+                        if (e.getText().equals(selectValue)) {
+                            e.click();
+                            break;
+                        }
+                    }
+                    elementClicked = true;
+                } else if (path.contains("com.atlashxm") || path.contains("android:id")) {
+                    WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+                    List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id(path)));
+                    System.out.println("size of list is " + listOfElements.size());
+                    for (WebElement e : listOfElements) {
+                        wait.until((ExpectedConditions.elementToBeClickable(By.id(path))));
+                        if (e.getText().equals(selectValue)) {
+                            e.click();
+                            break;
+                        }
+                    }
+                    elementClicked = true;
                 }
-            }
-        } else if (path.contains("com.atlashxm")) {
-            WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
-            List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id(path)));
-            System.out.println("size of list is " + listOfElements.size());
-            for (WebElement e : listOfElements) {
-                wait.until((ExpectedConditions.presenceOfAllElementsLocatedBy(By.id(path))));
-                if (e.getText().equals(selectValue)) {
-                    e.click();
-                    break;
-                }
+            } catch (Exception e) {
+                System.out.println("Exception Message: "+e.getMessage());
+                attempts++;
+                System.out.println("Exception caught. Retrying attempt " + attempts);
             }
         }
     }
@@ -345,7 +360,7 @@ public class SupportMethods {
         }
     }
 
-    public void selectYearFromCalendar(String expectedYearValue, String valuesPath, String scrollListPath) throws InterruptedException {
+    public void selectYearFromCalendar(int expectedYearValue, String valuesPath, String scrollListPath) throws InterruptedException {
         String year = "";  // Initial year value
         List<WebElement> listOfYears;
         WebElement yearOption = null;
@@ -354,49 +369,48 @@ public class SupportMethods {
             System.out.println("Number of elements: " + listOfYears.size());
             for (WebElement e : listOfYears) {
                 year = e.getText();
-                System.out.println("THIS IS VALUE OF E " + year);
-                System.out.println("Selected Year = " + year + " Expected Year = " + expectedYearValue + " = " + year.equals(expectedYearValue));
-
                 if (year.equals(expectedYearValue)) {
                     yearOption = e;
                     break;  // Exit the for loop as the expected value is found
                 }
             }
             if (!year.equals(expectedYearValue)) {
-                ScrollDown(scrollListPath, 70);  // Scroll down if the expected value was not found
+                ScrollDown(scrollListPath, 80);  // Scroll down if the expected value was not found
             }
         }
         System.out.println("Year " + year + " is equal to Expected " + expectedYearValue);
         yearOption.click();
     }
 
-    public void selectDateFromCalendar(String expectedDateValue, String valuesPath) throws InterruptedException {
-        androidDriver.findElement(By.xpath(valuesPath.replace("day", String.valueOf(expectedDateValue)))).click();
+    public void selectDateFromCalendar(int expectedYear, int expectedMonth, int expectedDay, String dateValuesList) throws InterruptedException {
+        androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        LocalDate expectedDate = LocalDate.of(expectedYear, expectedMonth, expectedDay);
+        //androidDriver.findElement(By.xpath(valuesPath.replace("day", String.valueOf(expectedDateValue)))).click();
+        // Format the expected date in the desired format
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
+        String formattedDate = expectedDate.format(formatter);
+
+        // Construct the XPath dynamically
+        String formattedXPath = String.format(dateValuesList, formattedDate);
+
+        // Add explicit wait
+        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(10));
+        WebElement dateElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(formattedXPath)));
+
+        // Click the date element
+        dateElement.click();
     }
-         /*   year = String.valueOf(e.getText());
-            System.out.println("value of year is " + year);
-            if (e.equals(expectedYearValue)) {
-                e.click();
-            } else {
-                ScrollDown(scrollListPath, 50);
-            }*/
 
-    /*            String date = "";  // Initial year value
-            List<WebElement> listOfDates;
-            WebElement dateOption = null;
-            while (!date.equals(expectedDateValue)) {
-                listOfDates = androidDriver.findElements(By.id(valuesPath));
-                System.out.println("Number of elements: " + listOfDates.size());
-                for (WebElement e : listOfDates) {
-                    date = e.getText();
-                    System.out.println("THIS IS VALUE OF E " + date);
-                    System.out.println("Selected Year = " + date + " Expected Year = " + expectedDateValue + " = " + date.equals(expectedDateValue));
-
-                    if (date.equals(expectedDateValue)) {
-                        dateOption = e;
-                        dateOption.click();
-                        break;  // Exit the for loop as the expected value is found
-                    }
-                }
-            }*/
+    public void ScrollToElement(String resourceId)
+    {
+        try {
+            // Use UiScrollable to scroll until the element with the specified content description is visible
+            androidDriver.findElement(AppiumBy.androidUIAutomator(   "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView("
+                    + "new UiSelector().resourceIdMatches(\".*" + resourceId + ".*\"));"));
+        } catch (NoSuchElementException e) {
+            System.out.println("Element not found using UiScrollable: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("An error occurred while scrolling: " + e.getMessage());
+        }
+    }
 }
