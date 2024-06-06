@@ -84,24 +84,26 @@ public class WSEOnboardingPage {
     }
     public void enterCity(String expectedCityValue)
     {
-
+        sm.sendKeysByPath(ol.txtCity,expectedCityValue);
     }
     public void enterProvince(String expectedProvinceValue)
     {
-
+        sm.sendKeysByPath(ol.txtState,expectedProvinceValue);
     }
     public void enterZipcode(String expectedZipcodeValue)
     {
-
+        sm.sendKeysByPath(ol.txtPostalCode,expectedZipcodeValue);
     }  public void enterAddress1(String expectedAddress1Value)
     {
-
+        sm.sendKeysByPath(ol.txtAddress1,expectedAddress1Value);
     }  public void enterAddress2(String expectedAddress2Value)
     {
-
+        sm.sendKeysByPath(ol.txtAddress2, expectedAddress2Value);
     }
     public void enterPhoneNumber(String expectedPhoneNumberValue, String expeectedCountryCodeValue)
     {
-
+        sm.Tap(ol.dropdownCountry);
+        sm.SelectListElementsbyPath(ol.listOfCountries,expeectedCountryCodeValue);
+        sm.sendKeysByPath(ol.txtPhoneNumber,expectedPhoneNumberValue);
     }
 }

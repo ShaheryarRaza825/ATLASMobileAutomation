@@ -364,6 +364,13 @@ public class StepDefinition {
 
     @Then("user enters the values for the fields on HomeAddress tab")
     public void userEntersTheValuesForTheFieldsOnHomeAddressTab() {
+        wop.selectHomeCountry("Canada");
+        wop.enterCity("Toronto");
+        wop.enterProvince("Ontario");
+        wop.enterZipcode("23435");
+        wop.enterAddress1("House 10303");
+        wop.enterAddress2("Street 4949");
+        wop.enterPhoneNumber("34103040676","Canada");
     }
 }
 
