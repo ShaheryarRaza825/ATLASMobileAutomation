@@ -1,6 +1,7 @@
 package StepDefinition;
 
 import Pages.InviteWSEtoAtlasPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -73,4 +74,5 @@ public class WebSteps {
     public void user_is_present_on_wse_personal_information_page() {
 
     }
+
 }

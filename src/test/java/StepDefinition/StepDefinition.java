@@ -346,24 +346,24 @@ public class StepDefinition {
     @Then("user enters values for the fields on PersonalInformation tab")
     public void userEntersValuesForTheFieldsOnPersonalInformationTab() throws InterruptedException {
         wop.selectTitle("Mr.");
-        wop.selectDateOfBirth(2001,6,15);
+        wop.selectDateOfBirth("2004",6,11);
         wop.selectMaritalStatus("Single");
         wop.selectGender("Male");
     }
 
-    @And("user clicks the continue button")
-    public void userClicksTheContinueButton() {
-        wop.ContinueToCitizenshipTab();
+    @And("user clicks the profile continue button")
+    public void userClicksTheProfileContinueButton() {
+        wop.continueToCitizenshipTab();
     }
 
     @Then("user enters values for the fields on CitizenshipInformation tab")
-    public void userEntersValuesForTheFieldsOnCitizenshipInformationTab() {
+    public void userEntersValuesForTheFieldsOnCitizenshipInformationTab() throws InterruptedException {
         wop.selectCitizenship("Canada");
         wop.enterNationalId("31314");
     }
 
     @Then("user enters the values for the fields on HomeAddress tab")
-    public void userEntersTheValuesForTheFieldsOnHomeAddressTab() {
+    public void userEntersTheValuesForTheFieldsOnHomeAddressTab() throws InterruptedException {
         wop.selectHomeCountry("Canada");
         wop.enterCity("Toronto");
         wop.enterProvince("Ontario");
@@ -371,6 +371,57 @@ public class StepDefinition {
         wop.enterAddress1("House 10303");
         wop.enterAddress2("Street 4949");
         wop.enterPhoneNumber("34103040676","Canada");
+    }
+
+    @Then("user enters the values for the fields on Banking tab")
+    public void userEntersTheValuesForTheFieldsOnBankingTab() throws InterruptedException {
+        wop.selectBankCountry("Canada");
+        wop.enterAccountHolderName("Test Onboarding");
+    }
+
+    @Then("user enters the values for the fields on Emergency tab")
+    public void userEntersTheValuesForTheFieldsOnEmergencyTab() throws InterruptedException {
+        wop.enterFirstName("Test");
+        wop.enterLastName("Onbaord Emergency");
+        wop.selectRelationship("Brother");
+        wop.enterEmail("email@emergency.com");
+        wop.enterEmergencyPhoneNumber("Colombia","2342325445");
+    }
+
+    @And("user clicks the Submit button")
+    public void userClicksTheSubmitButton() {
+        wop.submitOnboarding();
+    }
+
+    @And("user clicks the continue button on accounthodlderinfo tab")
+    public void userClicksTheContinueButtonOnAccounthodlderinfoTab() {
+        wop.continueAndSkipAccountHolderInfo();
+    }
+
+    @Then("user enters the values for the fields on General Information tab")
+    public void userEntersTheValuesForTheFieldsOnGeneralInformationTab() {
+        wop.selectSameAsHomeAddress();
+    }
+
+
+    @And("user clicks the continue button on general info tab")
+    public void userClicksTheContinueButtonOnGeneralInfoTab() {
+        wop.continueToEmergency();
+    }
+
+    @And("user clicks the citizenship continue button")
+    public void userClicksTheCitizenshipContinueButton() {
+        wop.continueToHomeAddressTab();
+    }
+
+    @And("user clicks the homeaddress continue button")
+    public void userClicksTheHomeaddressContinueButton() {
+            wop.continueToBankingTab();
+        }
+
+    @Then("user logsout of the application")
+    public void userLogsoutOfTheApplication() {
+        wop.logoutOfTheApp();
     }
 }
 

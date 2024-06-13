@@ -35,12 +35,14 @@ public class WSEOnboardingPage {
         System.out.println("Dropdown Open, now get the list");
         sm.SelectListElementsbyPath(ol.listTitle,title);
     }
-    public void selectDateOfBirth(int expectedYear, int expectedMonth, int expectedDate) throws InterruptedException {
+    public void selectDateOfBirth(String expectedYear, int expectedMonth, int expectedDate) throws InterruptedException {
         System.out.println("Open Calendar");
         sm.clickByPath(ol.openCalendar);
         sm.clickByPath(ol.openYearList);
-        sm.selectYearFromCalendar(expectedYear, ol.listofYears,ol.scrollYearList);
+        sm.selectValueFromScrollableList(expectedYear,ol.listofYears,ol.scrollYearList, "Down");
+        System.out.print("Year is selected");
         sm.selectDateFromCalendar(expectedYear,expectedMonth,expectedDate,ol.listofDays);
+        System.out.print("Date is selected");
         sm.clickByPath(ol.btnSelectYear);
     }
     public void selectMaritalStatus(String maritalStatus)
@@ -53,34 +55,34 @@ public class WSEOnboardingPage {
     }
     public void selectGender(String gender)
     {
-        sm.ScrollToElement(ol.scrollPersonalInfoTab);
+        sm.ScrollUp(ol.scrollPersonalInfoTab,80);
         System.out.println("Lets select the gender now");
         sm.Tap(ol.dropdownGender);
         System.out.println("Dropdown Open, now get the list");
         sm.SelectListElementsbyPath(ol.listGender,gender);
         System.out.println("Gender is Selected");
     }
-    public void ContinueToCitizenshipTab()
+    public void continueToCitizenshipTab()
     {
-        sm.clickByPath(ol.btnContinue);
+        sm.clickByPath(ol.btnProfileContinue);
     }
-    public void selectCitizenship(String expectedCitizenshipValue)
-    {
+    public void selectCitizenship(String expectedCitizenshipValue) throws InterruptedException {
         sm.Tap(ol.dropdownCountry);
-        sm.SelectListElementsbyPath(ol.listOfCountries,expectedCitizenshipValue);
+        sm.selectValueFromScrollableList(expectedCitizenshipValue, ol.listOfCountries,ol.scrollListOfCountries, "Up");
+        sm.clickByPath(ol.btnSelectCountry);
     }
     public void enterNationalId(String expectedNationalIdValue)
     {
         sm.sendKeysByPath(ol.txtNationalId,expectedNationalIdValue);
     }
-    public void ContinueToHomeAddressTab()
+    public void continueToHomeAddressTab()
     {
-        sm.clickByPath(ol.btnContinue);
+        sm.clickByPath(ol.btnCitizenshipContinue);
     }
-    public void selectHomeCountry(String expectedCitizenshipValue)
-    {
+    public void selectHomeCountry(String expectedHomeAddressValue) throws InterruptedException {
         sm.Tap(ol.dropdownCountry);
-        sm.SelectListElementsbyPath(ol.listOfCountries,expectedCitizenshipValue);
+        sm.selectValueFromScrollableList(expectedHomeAddressValue,ol.listOfCountries,ol.scrollListOfCountries,"Up");
+        sm.clickByPath(ol.btnSelectCountry);
     }
     public void enterCity(String expectedCityValue)
     {
@@ -100,10 +102,78 @@ public class WSEOnboardingPage {
     {
         sm.sendKeysByPath(ol.txtAddress2, expectedAddress2Value);
     }
-    public void enterPhoneNumber(String expectedPhoneNumberValue, String expeectedCountryCodeValue)
-    {
-        sm.Tap(ol.dropdownCountry);
-        sm.SelectListElementsbyPath(ol.listOfCountries,expeectedCountryCodeValue);
+    public void enterPhoneNumber(String expectedPhoneNumberValue, String expectedCountryCodeValue) throws InterruptedException {
+        sm.ScrollUp(ol.scrollHomeAddressTab,100);
+        sm.ScrollUp(ol.scrollHomeAddressTab,100);
+        sm.ScrollUp(ol.scrollHomeAddressTab,500);
+        sm.ScrollUp(ol.scrollHomeAddressTab,200);
+        sm.ScrollUp(ol.scrollHomeAddressTab,100);
+        sm.ScrollUp(ol.scrollHomeAddressTab,100);
+        sm.clickByPath(ol.dropdownOfCountryCode);
+        sm.selectValueFromScrollableList(expectedCountryCodeValue,ol.listOfCountries,ol.scrollListOfCountries,"Up");
+        sm.clickByPath(ol.btnSelectCountry);
         sm.sendKeysByPath(ol.txtPhoneNumber,expectedPhoneNumberValue);
     }
+    public void continueToBankingTab() {
+        sm.clickByPath(ol.btnHomeAddressContinue);
+    }
+    public void selectBankCountry(String expectedBankCountry) throws InterruptedException {
+        sm.Tap(ol.dropdownBankCountry);
+        sm.selectValueFromScrollableList(expectedBankCountry,ol.listOfCountries,ol.scrollListOfCountries,"Up");
+        sm.clickByPath(ol.btnSelectCountry);
+    }
+    public void enterAccountHolderName(String accountHolderName)
+    {
+        sm.sendKeysByPath(ol.txtAccountHolderName,accountHolderName);
+    }
+    public void continueAndSkipAccountHolderInfo()
+    {
+        sm.clickByPath(ol.btnAccountHolderInfoContinue);
+        sm.clickByPath(ol.btnSkipBankingInfo);
+    }
+    public void selectSameAsHomeAddress()
+    {
+        sm.clickByPath(ol.checkboxSameAsHomeAddress);
+    }
+    public void continueToEmergency()
+    {
+        sm.clickByPath(ol.btnGeneralInformationContinue);
+    }
+
+    public void enterFirstName(String firstName)
+    {
+        sm.sendKeysByPath(ol.txtEmergencyFirstName,firstName);
+    }
+    public void enterLastName(String lastName)
+    {
+        sm.sendKeysByPath(ol.txtEmergencyLastName,lastName);
+    }
+    public void selectRelationship(String relationsship)
+    {
+        sm.clickByPath(ol.dropdownRelation);
+        sm.SelectListElementsbyPath(ol.listOfRelations,relationsship);
+        System.out.println("relation is selected");
+    }
+    public void enterEmail(String email)
+    {
+        sm.sendKeysByPath(ol.txtEmergencyEmail,email);
+    }
+    public void enterEmergencyPhoneNumber(String expectedCountryCodeValue, String expectedPhoneNumberValue) throws InterruptedException {
+        sm.clickByPath(ol.dropdownOfCountryCode);
+        sm.selectValueFromScrollableList(expectedCountryCodeValue,ol.listOfCountries,ol.scrollListOfCountries,"Up");
+        sm.clickByPath(ol.btnSelectCountry);
+        sm.sendKeysByPath(ol.txtPhoneNumber,expectedPhoneNumberValue);
+    }
+    public void submitOnboarding()
+    {
+        sm.clickByPath(ol.btnEmergencyContinue);
+        sm.clickByPath(ol.btnDocumentsToSignContinue);
+        sm.clickByPath(ol.btnDocumentsToUploadContinue);
+        sm.clickByPath(ol.btnSubmitOnboarding);
+    }
+    public void logoutOfTheApp()
+    {
+        sm.clickByPath(ol.btnLogout);
+    }
+
 }

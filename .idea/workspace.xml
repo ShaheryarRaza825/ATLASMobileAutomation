@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Completed Profile Personal Info tab for Onboaridng&#10;Added ScrollToElementMethod &#10;Added Date selection method &#10;Added xpaths till emergency tab&#10;created methods for Profile Section">
+    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Completed Step Definition and Page class for HomeAddress tab">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/OnboardingLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/OnboardingLocators.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinition/WebSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinition/WebSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/OnboardingUser.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/OnboardingUser.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717676335313</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Completed Step Definition and Page class for HomeAddress tab">
+      <created>1717678854145</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1717678854145</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -283,7 +297,8 @@
     <MESSAGE value="Add onboarding feature&#10;Completed code for scrolling on Calendar list&#10;Completed selection of Date of Birth" />
     <MESSAGE value="Added onboarding feature&#10;Completed code for scrolling on Calendar list&#10;Completed selection of Date of Birth" />
     <MESSAGE value="Completed Profile Personal Info tab for Onboaridng&#10;Added ScrollToElementMethod &#10;Added Date selection method &#10;Added xpaths till emergency tab&#10;created methods for Profile Section" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed Profile Personal Info tab for Onboaridng&#10;Added ScrollToElementMethod &#10;Added Date selection method &#10;Added xpaths till emergency tab&#10;created methods for Profile Section" />
+    <MESSAGE value="Completed Step Definition and Page class for HomeAddress tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed Step Definition and Page class for HomeAddress tab" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -293,11 +308,56 @@
           <line>77</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
+          <line>168</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
+          <line>161</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
+          <line>164</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java</url>
+          <line>387</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
+          <line>163</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
+          <line>153</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Runner_java$Runner.ic" NAME="Runner Coverage Results" MODIFIED="1716893441649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Runner_java$Runner.ic" NAME="Runner Coverage Results" MODIFIED="1718107498625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Runner.*</FILTER>
     </SUITE>
   </component>

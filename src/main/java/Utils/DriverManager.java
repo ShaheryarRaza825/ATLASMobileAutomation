@@ -31,7 +31,7 @@ public class DriverManager {
         //options.noReset();
         options.setFullReset(true);
        // options.setApp("C:\\Users\\FaizanJunani\\Desktop\\Appium Automation\\AtlasMobileJava\\src\\test\\resources\\apps\\app-UAT-debug 25.apk");
-        options.setApp("C:\\Users\\FaizanJunani\\Desktop\\Appium Automation\\AtlasMobileJava\\src\\test\\resources\\apps\\Atlas-UAT-D-1_3_0_3836.apk");
+        options.setApp("C:\\Users\\FaizanJunani\\Desktop\\Appium Automation\\AtlasMobileJava\\src\\test\\resources\\apps\\app-UAT-5June2024.apk");
         System.out.println("App Setup Done");
         options.autoGrantPermissions();
         System.out.println("Permissions Granted");
