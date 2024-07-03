@@ -8,7 +8,7 @@ public class LoginLocators {
      public String userOnDashboard = "com.atlashxm.uat:id/main_heading";
      //public String locOption = "com.android.permissioncontroller:id/permission_allow_foreground_only_button";
      //public String locPermissionMessage = "com.android.permissioncontroller:id/permission_message";
-     //public String MFA = "com.atlashxm:id/firstPinView";
+     public String MFA = "com.atlashxm.uat:id/firstPinView";
      public String userPresentOnLogin = "com.atlashxm.uat:id/txtDesc";
      //public String pathSplashScreenLogin = "com.atlashxm.trng:id/intro_textView";
      public String pathSplashScreenLoginBtn = "com.atlashxm.uat:id/btnContinue";

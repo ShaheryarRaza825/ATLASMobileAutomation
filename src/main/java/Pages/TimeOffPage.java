@@ -13,7 +13,7 @@ public class TimeOffPage {
     SupportMethods sm = new SupportMethods();
     TimeoffLocators timeoffLocators = new TimeoffLocators();
 
-    public TimeOffPage() throws MalformedURLException {
+    public TimeOffPage() throws Exception {
 
     }
     public void UserIsPresentOnPTOPage()

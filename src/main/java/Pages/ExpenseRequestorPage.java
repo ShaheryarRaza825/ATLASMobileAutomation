@@ -12,7 +12,7 @@ public class ExpenseRequestorPage {
     SupportMethods sm = new SupportMethods();
     ExpenseRequestorLocators erl = new ExpenseRequestorLocators();
 
-    public ExpenseRequestorPage() throws MalformedURLException {
+    public ExpenseRequestorPage() throws Exception {
     }
     public void navigateToExpenseTab()
     {

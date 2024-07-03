@@ -13,7 +13,7 @@ public class InviteWSEtoAtlasPage {
     WebAddWSELocators webAddWSELocators = new WebAddWSELocators();
     SupportMethods sm = new SupportMethods();
     String[] userName;
-    public InviteWSEtoAtlasPage() throws MalformedURLException {
+    public InviteWSEtoAtlasPage() throws Exception {
     }
     public void userIsPresentOnWebLoginPage()
     {

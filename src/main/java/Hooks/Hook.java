@@ -1,14 +1,16 @@
 package Hooks;
+import Utils.BrowserStackDriver;
 import Utils.SupportMethods;
 import io.appium.java_client.android.AndroidDriver;
-import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
-
+import org.junit.After;
+import org.junit.Before;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.sql.Driver;
 
 import Utils.DriverManager;
+import org.openqa.selenium.devtools.v85.browser.Browser;
 
 public class Hook {
 
@@ -17,13 +19,16 @@ public class Hook {
 
     public Hook() throws MalformedURLException {
     }
+
     @BeforeAll
-    public static void beforeAll() throws IOException {
-        DriverManager.setupAndroidDriver();
+    public static void before_or_after_all() throws Exception {
+        BrowserStackDriver bsd  = new BrowserStackDriver();
+        bsd.setUp();
+        //DriverManager.setupAndroidDriver();
         //DriverManager.getWebDriver();
        // writePropertiesToFile();
     }
-    public static void writePropertiesToFile() throws IOException {
+    public static void writePropertiesToFile() throws Exception {
         SupportMethods sm = new SupportMethods();
         String[]userName;
         userName = sm.RandomNameGenerator();

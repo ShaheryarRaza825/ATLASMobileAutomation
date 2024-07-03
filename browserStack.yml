@@ -1,0 +1,22 @@
+# Add your BrowserStack userName and acccessKey here or set BROWSERSTACK_USERNAME and
+# BROWSERSTACK_ACCESS_KEY as env variables
+userName: faizanjunani_tUXMqP
+accessKey: QF2cTavdARTxan83hWcJ
+# The following capabilities are used to set up reporting on BrowserStack:
+# Set 'projectName' to the name of your project. Example, Marketing Website
+projectName: BrowserStack Sample
+# Set `buildName` as the name of the job / testsuite being run
+buildName: browserstack build
+# Set `framework` of your test suite. Example, `testng`, `cucumber`, `cucumber-testng`
+# This property is needed to send test context to BrowserStack (test name, status)
+framework: cucumber-junit4
+app: bs://3d6c67c059f325cbb2966111a132e704705406df
+platforms:
+  - platformName: android
+    deviceName: Samsung Galaxy S22 Ultra
+    platformVersion: 12.0
+
+source: java:appium-intellij:v1.1.4
+# Test Observability is an intelligent test reporting & debugging product. It collects data using the SDK. Read more about what data is collected at https://www.browserstack.com/docs/test-observability/references/terms-and-conditions
+# Visit observability.browserstack.com to see your test reports and insights. To disable test observability, specify `testObservability: false` in the key below.
+testObservability: true

@@ -3,9 +3,7 @@ package Utils;
 import Hooks.Hook;
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
+//import io.appium.java_client.android.driver;
 import org.ajbrown.namemachine.NameGenerator;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Pause;
@@ -31,38 +29,40 @@ import java.util.regex.Pattern;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
-public class SupportMethods {
+public class SupportMethods extends BrowserStackDriver {
 
     SoftAssert softAssert = new SoftAssert();
     DriverManager dm = new DriverManager();
+    BrowserStackDriver bsd = new BrowserStackDriver();
     Hook hook;
-    public AndroidDriver androidDriver = dm.getDriver();
+    //public driver driver = dm.getDriver();
+    //private driver driver = bsd.setUp();
     public WebDriver webDriver = dm.getWebDriver();
     long Timeout = 30;
     List<WebElement> listItems;
 
-    public SupportMethods() throws MalformedURLException {
+    public SupportMethods() throws Exception {
 
     }
 
     public void waitForVisibilityByPath(String path) {
 
         if (path.contains("/hierarchy/") || path.contains("//android.view")) {
-            new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout)).
+            new WebDriverWait(driver, Duration.ofSeconds(Timeout)).
                     until(d -> d.findElement(By.xpath(path)));
         } else if (path.contains("com.atlashxm")) {
-            new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout)).until(d -> d.findElement(By.id(path)));
+            new WebDriverWait(driver, Duration.ofSeconds(Timeout)).until(d -> d.findElement(By.id(path)));
         }
     }
 
     public void sendKeysByPath(String path, String value) {
         if (path.contains("/hierarchy/") || path.contains("//android.view")) {
-            WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
             WebElement element = wait.until(d -> d.findElement(By.xpath(path)));
             element.clear();
             element.sendKeys(value);
         } else if (path.contains("com.atlashxm")|| path.contains("android:id")) {
-            WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
             WebElement element = wait.until(d -> d.findElement(By.id(path)));
             element.clear();
             element.sendKeys(value);
@@ -78,16 +78,16 @@ public class SupportMethods {
     public void verifyElement(String path, String expectedValue) {
         try {
             if (path.contains("/hierarchy/") || path.contains("//android.view")) {
-                new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
+                new WebDriverWait(driver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
                         .visibilityOfElementLocated(By.xpath(path)));
-                WebElement element = androidDriver.findElement(By.xpath(path));
+                WebElement element = driver.findElement(By.xpath(path));
                 String actualText = element.getText();
                 System.out.println(actualText);
                 softAssert.assertEquals(actualText, expectedValue);
-            } else if (path.contains("com.atlashxm")) {
-                new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
+            } else if (path.contains("com.atlashxm") || path.contains("android:id")) {
+                new WebDriverWait(driver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
                         .visibilityOfElementLocated(By.id(path)));
-                WebElement element = androidDriver.findElement(By.id(path));
+                WebElement element = driver.findElement(By.id(path));
                 String actualText = element.getText();
                 System.out.println(actualText);
                 softAssert.assertEquals(actualText, expectedValue);
@@ -102,16 +102,16 @@ public class SupportMethods {
     public void clickByPath(String path) {
         try {
             if (path.contains("/hierarchy/") || path.contains("//android.view")) {
-                WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
                 WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(path)));
                 element.click();
-                androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
             } else if (path.contains("com.atlashxm") || path.contains("android:id")) {
-                WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
                 WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(path)));
                 element.click();
-                androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             } else if (path.contains("//*") || path.contains("/html")) {
                 WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(Timeout));
                 WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(path)));
@@ -134,17 +134,17 @@ public class SupportMethods {
 
     public void getElementTextandClick(String path) {
         if (path.contains("com.atlashxm")) {
-            new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
+            new WebDriverWait(driver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
                     .visibilityOfElementLocated(By.id(path)));
-            WebElement element = androidDriver.findElement(By.id(path));
+            WebElement element = driver.findElement(By.id(path));
             System.out.println(element.getText());
             if (element.getText().equals("Vacation")) {
                 clickByPath(path);
             }
         } else if (path.contains("/hierarchy/") || path.contains("//android.view")) {
-            new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
+            new WebDriverWait(driver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
                     .visibilityOfElementLocated(By.xpath(path)));
-            WebElement element = androidDriver.findElement(By.xpath(path));
+            WebElement element = driver.findElement(By.xpath(path));
             System.out.println(element.getText());
             if (element.getText().equals("Vacation")) {
                 clickByPath(path);
@@ -154,34 +154,34 @@ public class SupportMethods {
 
     public void getElementText(String path) {
         if (path.contains("com.atlashxm")) {
-            new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
+            new WebDriverWait(driver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
                     .visibilityOfElementLocated(By.id(path)));
-            WebElement element = androidDriver.findElement(By.id(path));
+            WebElement element = driver.findElement(By.id(path));
             System.out.println(element.getText());
         } else if (path.contains("/hierarchy/") || path.contains("//android.view")) {
-            new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
+            new WebDriverWait(driver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
                     .visibilityOfElementLocated(By.xpath(path)));
-            WebElement element = androidDriver.findElement(By.xpath(path));
+            WebElement element = driver.findElement(By.xpath(path));
             System.out.println(element.getText());
         }
     }
 
     public void ScrollUp(String path, int scroll) {
         if (path.contains("/hierarchy/") || path.contains("//android.view")) {
-            WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
             RemoteWebElement element = (RemoteWebElement) wait.until(d -> d.findElement(By.xpath(path)));
-            androidDriver.executeScript("gesture: swipe",
+            driver.executeScript("gesture: swipe",
                     ImmutableMap.of("elementId", element.getId(),
                             "percentage", scroll, "direction", "up", "speed", 30));
-            androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         } else if (path.contains("com.atlashxm") || path.contains("android:id")) {
-            WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
             RemoteWebElement element = (RemoteWebElement) wait.until(d -> d.findElement(By.id(path)));
-            androidDriver.executeScript("gesture: swipe",
+            driver.executeScript("gesture: swipe",
                     ImmutableMap.of("elementId", element.getId(),
                             "percentage", scroll, "direction", "up", "speed", 30
                     ));
-            androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         }
 
@@ -189,37 +189,37 @@ public class SupportMethods {
 
     public void ScrollDown(String path, int scroll) {
         if (path.contains("/hierarchy/") || path.contains("//android.view")) {
-            WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
             RemoteWebElement element = (RemoteWebElement) wait.until(d -> d.findElement(By.xpath(path)));
-            androidDriver.executeScript("gesture: swipe",
+            driver.executeScript("gesture: swipe",
                     ImmutableMap.of("elementId", element.getId(),
                             "percentage", scroll, "direction", "down", "speed", 90));
-            androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         } else if (path.contains("com.atlashxm") || path.contains("android:id")) {
-            WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
             RemoteWebElement element = (RemoteWebElement) wait.until(d -> d.findElement(By.id(path)));
-            androidDriver.executeScript("gesture: swipe",
+            driver.executeScript("gesture: swipe",
                     ImmutableMap.of("elementId", element.getId(),
                             "percentage", scroll, "direction", "down", "speed", 90));
-            androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         }
     }
 
     public void selectDateFromCalendar(String path) {
-        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
         WebElement element = wait.until(d -> d.findElement(AppiumBy.accessibilityId(path)));
         element.click();
     }
 
     public void waitForElementToDisappear(String path) {
-        new WebDriverWait(androidDriver, Duration.ofSeconds(10)).until(ExpectedConditions
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions
                 .invisibilityOfElementLocated(By.xpath(path)));
     }
 
     public void Scroll(String text) {
-        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
-        androidDriver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains(\"" + text + "\"))"));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
+        driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains(\"" + text + "\"))"));
     }
 
     public String[] RandomNameGenerator() {
@@ -253,7 +253,7 @@ public class SupportMethods {
         while (!elementClicked && attempts < 3) {
             try {
                 if (path.contains("/hierarchy/") || path.contains("//android.view")) {
-                    WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+                    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
                     List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(path)));
                     System.out.println("size of list is " + listOfElements.size());
                     for (WebElement e : listOfElements) {
@@ -267,7 +267,7 @@ public class SupportMethods {
                     break;
 
                 } else if (path.contains("com.atlashxm") || path.contains("android:id")) {
-                    WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+                    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
                     List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id(path)));
                     System.out.println("size of list is " + listOfElements.size());
                     for (WebElement e : listOfElements) {
@@ -302,17 +302,17 @@ public class SupportMethods {
     public void Tap(String path) {
         try {
             if (path.contains("/hierarchy/") || path.contains("//android.view")) {
-                WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
                 RemoteWebElement element = (RemoteWebElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath(path)));
-                androidDriver.executeScript("mobile: clickGesture", ImmutableMap.of(
+                driver.executeScript("mobile: clickGesture", ImmutableMap.of(
                         "elementId", element.getId()));
-                androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             } else if (path.contains("com.atlashxm")) {
-                WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
                 RemoteWebElement element = (RemoteWebElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath(path)));
-                androidDriver.executeScript("mobile: clickGesture", ImmutableMap.of(
+                driver.executeScript("mobile: clickGesture", ImmutableMap.of(
                         "elementId", element.getId()));
-                androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -322,22 +322,22 @@ public class SupportMethods {
     public void SwipeLeft(String path) {
         try {
             if (path.contains("/hierarchy/") || path.contains("//android.view")) {
-                WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
-                ((JavascriptExecutor) androidDriver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
+                ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
                         "left", 100, "top", 100, "width", 200, "height", 200,
                         "direction", "left",
                         "percent", 0.75
                 ));
-                androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             } else if (path.contains("com.atlashxm")) {
-                WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
                 RemoteWebElement element = (RemoteWebElement) wait.until(d -> d.findElement(By.xpath(path)));
-                ((JavascriptExecutor) androidDriver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+                ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
                         "left", 100, "top", 100, "width", 200, "height", 200,
                         "direction", "left",
                         "percent", 0.75
                 ));
-                androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -347,22 +347,22 @@ public class SupportMethods {
     public void SwipeRight(String path) {
         try {
             if (path.contains("/hierarchy/") || path.contains("//android.view")) {
-                WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
-                ((JavascriptExecutor) androidDriver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
+                ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
                         "left", 100, "top", 100, "width", 200, "height", 200,
                         "direction", "right",
                         "percent", 0.75
                 ));
-                androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             } else if (path.contains("com.atlashxm")) {
-                WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
                 RemoteWebElement element = (RemoteWebElement) wait.until(d -> d.findElement(By.xpath(path)));
-                ((JavascriptExecutor) androidDriver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+                ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
                         "left", 100, "top", 100, "width", 200, "height", 200,
                         "direction", "right",
                         "percent", 0.75
                 ));
-                androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -380,7 +380,7 @@ public class SupportMethods {
         boolean elementClicked = false;
         while (true && attempts <=5) {
             try {
-                listOfValues = androidDriver.findElements(By.id(valuesPath));
+                listOfValues = driver.findElements(By.id(valuesPath));
                 System.out.println("Number of elements: " + listOfValues.size());
                 boolean matchFound = false;
                 WebElement matchingElement = null;
@@ -419,10 +419,10 @@ public class SupportMethods {
     }
 
     public void selectDateFromCalendar(String expectedYear, int expectedMonth, int expectedDay, String dateValuesList) throws InterruptedException {
-        androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         int expectedYearInt = Integer.parseInt(expectedYear);
         LocalDate expectedDate = LocalDate.of(expectedYearInt, expectedMonth, expectedDay);
-        //androidDriver.findElement(By.xpath(valuesPath.replace("day", String.valueOf(expectedDateValue)))).click();
+        //driver.findElement(By.xpath(valuesPath.replace("day", String.valueOf(expectedDateValue)))).click();
         // Format the expected date in the desired format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
         String formattedDate = expectedDate.format(formatter);
@@ -431,7 +431,7 @@ public class SupportMethods {
         String formattedXPath = String.format(dateValuesList, formattedDate);
 
         // Add explicit wait
-        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement dateElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(formattedXPath)));
 
         // Click the date element
@@ -446,11 +446,11 @@ public class SupportMethods {
     {
         try {
             // Use UiScrollable to scroll until the element with the specified content description is visible
-            androidDriver.findElement(AppiumBy.androidUIAutomator(   "new UiScrollable(new UiSelector().scrollable(true))." +
+            driver.findElement(AppiumBy.androidUIAutomator(   "new UiScrollable(new UiSelector().scrollable(true))." +
                     "scrollIntoView(new UiSelector().resourceIdMatches(\".*" + resourceId + ".*\"));"));
-            androidDriver.findElement(AppiumBy.androidUIAutomator(   "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().resourceId(\""+resourceId+"\").instance(0))"));
-          //  androidDriver.findElement(AppiumBy.androidUIAutomator(   "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollToEnd(10);"));
-/*            androidDriver.findElement(AppiumBy.androidUIAutomator(  "new UiScrollable(new UiSelector().scrollable(true))" +
+            driver.findElement(AppiumBy.androidUIAutomator(   "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().resourceId(\""+resourceId+"\").instance(0))"));
+          //  driver.findElement(AppiumBy.androidUIAutomator(   "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollToEnd(10);"));
+/*            driver.findElement(AppiumBy.androidUIAutomator(  "new UiScrollable(new UiSelector().scrollable(true))" +
                     ".scrollIntoView(new UiSelector().resourceIdMatches(\".*"+resourceId+".*\").text(\".*"+expectedText+".*\"))"));*/
             System.out.println("Scroll success");
         } catch (NoSuchElementException e) {

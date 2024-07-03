@@ -14,7 +14,7 @@ public class LoginPage {
     SupportMethods sm = new SupportMethods();
     LoginLocators loginLocators = new LoginLocators();
 
-    public LoginPage() throws MalformedURLException {
+    public LoginPage() throws Exception {
 
     }
     public void SplashScreenLogin()
@@ -47,9 +47,11 @@ public class LoginPage {
     public void loginToApp()
     {
         sm.clickByPath(loginLocators.loginBtn);
+        System.out.println("Enter OTP");
+        sm.sendKeysByPath(loginLocators.MFA,"123456");
     }
     public void verifyUserLoggedIn() throws InterruptedException {
-        Thread.sleep(5000);
+       // Thread.sleep(5000);
         sm.verifyElement(loginLocators.userOnDashboard, "Hi");
     }
 

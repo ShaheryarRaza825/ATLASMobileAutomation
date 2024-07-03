@@ -9,7 +9,7 @@ public class TimerWidgetPage {
     SupportMethods sm = new SupportMethods();
     TimerWidgetLocators twl = new TimerWidgetLocators();
 
-    public TimerWidgetPage() throws MalformedURLException {
+    public TimerWidgetPage() throws Exception {
     }
     public void userOnDashboard()
     {

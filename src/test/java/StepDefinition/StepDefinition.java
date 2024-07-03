@@ -15,14 +15,14 @@ public class StepDefinition {
 
     //Hook hook;
     //public AndroidDriver driver = hook.getDriver();
-    TimeOffPage tp = new TimeOffPage();
+   // TimeOffPage tp = new TimeOffPage();
     LoginPage lp = new LoginPage();
-    TimerWidgetPage twp = new TimerWidgetPage();
+/*    TimerWidgetPage twp = new TimerWidgetPage();
     TimesheetPage tsp = new TimesheetPage();
-    ExpenseRequestorPage erp = new ExpenseRequestorPage();
+    ExpenseRequestorPage erp = new ExpenseRequestorPage();*/
     WSEOnboardingPage wop = new WSEOnboardingPage();
 
-    public StepDefinition() throws MalformedURLException {
+    public StepDefinition() throws Exception {
     }
 
     @Given("user is present on {string} page")
@@ -36,7 +36,7 @@ public class StepDefinition {
         {
             lp.userIsPresentOnSplashScreen();
         }
-        else if(keyword.equals("dashboard"))
+     /*   else if(keyword.equals("dashboard"))
         {
             twp.userOnDashboard();
         }
@@ -55,7 +55,7 @@ public class StepDefinition {
         else if(keyword.equals("expense dashboard"))
         {
             erp.userPresentOnExpensePage();
-        }
+        }*/
     }
 
     @Given("user enters value in {string} field")
@@ -68,7 +68,7 @@ public class StepDefinition {
         {
             lp.setPassword("Password");
         }
-        else if(keyword.equals("hours"))
+      /*  else if(keyword.equals("hours"))
         {
             tp.EnterHours("Hours1","Hours2");
         }
@@ -91,11 +91,11 @@ public class StepDefinition {
         else if(keyword.equals("Exp comments"))
         {
             erp.enterComments();
-        }
+        }*/
     }
     @When("user clicks the {string} button")
     public void user_clicks_the_button(String keyword) throws InterruptedException {
-        if(keyword.equals("login") )
+       if(keyword.equals("login") )
         {
             lp.loginToApp();
         }
@@ -103,6 +103,7 @@ public class StepDefinition {
         {
             lp.SplashScreenLogin();
         }
+/*
         else if(keyword.equals("request timeoff")){
            tp.UserNavigateToPTOPage();
         }
@@ -155,12 +156,13 @@ public class StepDefinition {
         {
             erp.submitExpense();
         }
+*/
 
     }
 
     @And("user selects option for {string}")
     public void userSelectsOptionFor(String keyword) throws MalformedURLException {
-        if (keyword.equals("PTO")) {
+    /*    if (keyword.equals("PTO")) {
             tp.UserSelectsTimeOffType();
         } else if (keyword.equals("FromDate")) {
             tp.UserSelectsFromDate();
@@ -179,16 +181,16 @@ public class StepDefinition {
         }
         else if(keyword.equals("attachment")){
             erp.selectAttachment();
-        }
+        }*/
     }
 
     @Then("PTO should be submitted successfully")
     public void ptoShouldBeSubmittedSuccessfully() {
-        tp.ConfirmSubmissionOfPTO();
+       // tp.ConfirmSubmissionOfPTO();
     }
     @Then("user should be {string} successfully")
     public void userShouldBeSuccessfully(String keyword) throws InterruptedException {
-
+/*
         if(keyword.equals("logged in")){
             lp.verifyUserLoggedIn();
         }
@@ -197,7 +199,7 @@ public class StepDefinition {
         }
         else if(keyword.equals("clocked out")){
             twp.UserClockedOutSuccessfully();
-        }
+        }*/
 
     }
 
@@ -207,24 +209,24 @@ public class StepDefinition {
 
     @And("Expense should be submitted")
     public void expenseShouldBeSubmitted() {
-        erp.expenseSubmittedSuccessfully();
+        //erp.expenseSubmittedSuccessfully();
     }
     @Given("user is present on splash screen page")
     public void user_is_present_on_splash_screen_page() {
-        lp.userIsPresentOnSplashScreen();
+        //lp.userIsPresentOnSplashScreen();
     }
 
     @Then("user clicks the login button button on splash screen")
     public void user_clicks_the_login_button_button_on_splash_screen() {
-        lp.SplashScreenLogin();
+        //lp.SplashScreenLogin();
     }
 
     @Given("user is present on login page")
     public void user_is_present_on_login_page() {
-        lp.userIsPresentOnLoginPage();
+        //lp.userIsPresentOnLoginPage();
     }
 
-    @Given("user enters value in email field")
+   @Given("user enters value in email field")
     public void user_enters_value_in_email_field() throws IOException {
         lp.setUserName("Email");
     }
@@ -232,6 +234,7 @@ public class StepDefinition {
     @Given("user enters value in password field")
     public void user_enters_value_in_password_field() throws IOException {
         lp.setPassword("Password");
+
     }
 
     @Then("user clicks the login button")
@@ -243,7 +246,7 @@ public class StepDefinition {
     public void user_should_be_logged_in_successfully() throws InterruptedException {
         lp.verifyUserLoggedIn();
     }
-    @Given("user is present on dashboard page")
+  /*  @Given("user is present on dashboard page")
     public void user_is_present_on_dashboard_page() {
         twp.userOnDashboard();
     }
@@ -302,7 +305,7 @@ public class StepDefinition {
     @When("user enters value in hours field")
     public void user_enters_value_in_hours_field() throws IOException {
         tp.EnterHours("Hours1","Hours2");
-    }
+    }*/
 
     @When("user clicks the save button")
     public void user_clicks_the_save_button() {
@@ -325,103 +328,103 @@ public class StepDefinition {
 
     @Given("user is present on onboarding landing page")
     public void userIsPresentOnOnboardingLandingPage() {
-        wop.verifyUserIsPresentOnOnboardingLandingPage();
+  //      wop.verifyUserIsPresentOnOnboardingLandingPage();
     }
 
     @Then("user should click the Continue button below")
     public void userShouldClickTheContinueButtonBelow() {
-        wop.continueToOnboarding();
+//        wop.continueToOnboarding();
     }
 
     @Then("user can skip uploading profile picture")
     public void userCanSkipUploadingProfilePicture() {
-        wop.skipProfilePic();
+        //wop.skipProfilePic();
     }
 
     @And("user will be present on Profile tab")
     public void userWillBePresentOnProfileTab() {
-        wop.userPresentOnProfile("Profile");
+        //wop.userPresentOnProfile("Profile");
     }
 
     @Then("user enters values for the fields on PersonalInformation tab")
     public void userEntersValuesForTheFieldsOnPersonalInformationTab() throws InterruptedException {
-        wop.selectTitle("Mr.");
+    /*    wop.selectTitle("Mr.");
         wop.selectDateOfBirth("2004",6,11);
         wop.selectMaritalStatus("Single");
-        wop.selectGender("Male");
+        wop.selectGender("Male");*/
     }
 
     @And("user clicks the profile continue button")
     public void userClicksTheProfileContinueButton() {
-        wop.continueToCitizenshipTab();
+       // wop.continueToCitizenshipTab();
     }
 
     @Then("user enters values for the fields on CitizenshipInformation tab")
     public void userEntersValuesForTheFieldsOnCitizenshipInformationTab() throws InterruptedException {
-        wop.selectCitizenship("Canada");
-        wop.enterNationalId("31314");
+       /* wop.selectCitizenship("Canada");
+        wop.enterNationalId("31314");*/
     }
 
     @Then("user enters the values for the fields on HomeAddress tab")
     public void userEntersTheValuesForTheFieldsOnHomeAddressTab() throws InterruptedException {
-        wop.selectHomeCountry("Canada");
+      /*  wop.selectHomeCountry("Canada");
         wop.enterCity("Toronto");
         wop.enterProvince("Ontario");
         wop.enterZipcode("23435");
         wop.enterAddress1("House 10303");
         wop.enterAddress2("Street 4949");
-        wop.enterPhoneNumber("34103040676","Canada");
+        wop.enterPhoneNumber("34103040676","Canada");*/
     }
 
     @Then("user enters the values for the fields on Banking tab")
     public void userEntersTheValuesForTheFieldsOnBankingTab() throws InterruptedException {
-        wop.selectBankCountry("Canada");
-        wop.enterAccountHolderName("Test Onboarding");
+      /*  wop.selectBankCountry("Canada");
+        wop.enterAccountHolderName("Test Onboarding");*/
     }
 
     @Then("user enters the values for the fields on Emergency tab")
     public void userEntersTheValuesForTheFieldsOnEmergencyTab() throws InterruptedException {
-        wop.enterFirstName("Test");
+    /*    wop.enterFirstName("Test");
         wop.enterLastName("Onbaord Emergency");
         wop.selectRelationship("Brother");
         wop.enterEmail("email@emergency.com");
-        wop.enterEmergencyPhoneNumber("Colombia","2342325445");
+        wop.enterEmergencyPhoneNumber("Colombia","2342325445");*/
     }
 
     @And("user clicks the Submit button")
     public void userClicksTheSubmitButton() {
-        wop.submitOnboarding();
+     //   wop.submitOnboarding();
     }
 
     @And("user clicks the continue button on accounthodlderinfo tab")
     public void userClicksTheContinueButtonOnAccounthodlderinfoTab() {
-        wop.continueAndSkipAccountHolderInfo();
+        //wop.continueAndSkipAccountHolderInfo();
     }
 
     @Then("user enters the values for the fields on General Information tab")
     public void userEntersTheValuesForTheFieldsOnGeneralInformationTab() {
-        wop.selectSameAsHomeAddress();
+        //wop.selectSameAsHomeAddress();
     }
 
 
     @And("user clicks the continue button on general info tab")
     public void userClicksTheContinueButtonOnGeneralInfoTab() {
-        wop.continueToEmergency();
+        //wop.continueToEmergency();
     }
 
     @And("user clicks the citizenship continue button")
     public void userClicksTheCitizenshipContinueButton() {
-        wop.continueToHomeAddressTab();
+        //wop.continueToHomeAddressTab();
     }
 
     @And("user clicks the homeaddress continue button")
     public void userClicksTheHomeaddressContinueButton() {
-            wop.continueToBankingTab();
+       //     wop.continueToBankingTab();
         }
 
     @Then("user logsout of the application")
     public void userLogsoutOfTheApplication() {
-        wop.logoutOfTheApp();
+      //  wop.logoutOfTheApp();
     }
 }
 

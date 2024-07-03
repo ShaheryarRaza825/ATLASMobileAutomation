@@ -10,7 +10,7 @@ public class TimesheetPage {
     SupportMethods sm = new SupportMethods();
     TimesheetLocators tl = new TimesheetLocators();
 
-    public TimesheetPage() throws MalformedURLException {
+    public TimesheetPage() throws Exception {
     }
 
     public void navigateToTimesheetTab()
