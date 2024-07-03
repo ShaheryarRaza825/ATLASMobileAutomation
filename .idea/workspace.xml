@@ -4,25 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Completed onboarding workflow with successful execution">
-      <change afterPath="$PROJECT_DIR$/browserStack.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/BrowserStackDriver.java" afterDir="false" />
+    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Added Browser Stack code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/LoginLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/LoginLocators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/ExpenseRequestorPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/ExpenseRequestorPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/InviteWSEtoAtlasPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/InviteWSEtoAtlasPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/TimeOffPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/TimeOffPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/TimerWidgetPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/TimerWidgetPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/TimesheetPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/TimesheetPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinition/WebSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinition/WebSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +275,35 @@
       <option name="project" value="LOCAL" />
       <updated>1718272974431</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Completed onboarding workflow with successful execution">
+      <created>1720006281123</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1720006281123</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Completed onboarding workflow with successful execution">
+      <created>1720006307686</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1720006307686</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Completed onboarding workflow with successful execution">
+      <created>1720006325312</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1720006325312</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added Browser Stack code">
+      <created>1720006482764</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1720006482764</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -348,7 +359,8 @@
     <MESSAGE value="Completed Profile Personal Info tab for Onboaridng&#10;Added ScrollToElementMethod &#10;Added Date selection method &#10;Added xpaths till emergency tab&#10;created methods for Profile Section" />
     <MESSAGE value="Completed Step Definition and Page class for HomeAddress tab" />
     <MESSAGE value="Completed onboarding workflow with successful execution" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed onboarding workflow with successful execution" />
+    <MESSAGE value="Added Browser Stack code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Browser Stack code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
