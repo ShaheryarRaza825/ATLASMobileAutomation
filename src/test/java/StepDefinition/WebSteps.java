@@ -12,7 +12,7 @@ import java.net.MalformedURLException;
 public class WebSteps {
     InviteWSEtoAtlasPage iwap = new InviteWSEtoAtlasPage();
 
-    public WebSteps() throws MalformedURLException {
+    public WebSteps() throws Exception {
     }
 
     @Given("Admin is present on Atlas login page")
