@@ -9,7 +9,7 @@ public class WSEOnboardingPage {
     OnboardingLocators ol = new OnboardingLocators();
     SupportMethods sm = new SupportMethods();
 
-    public WSEOnboardingPage() throws MalformedURLException {
+    public WSEOnboardingPage() throws Exception {
     }
 
     public void verifyUserIsPresentOnOnboardingLandingPage()
