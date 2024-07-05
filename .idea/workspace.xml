@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="removed apk files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/browserStack.yml" beforeDir="false" afterPath="$PROJECT_DIR$/browserStack.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/browserstack-javaagent.debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-javaagent.debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/browserstack-javaagent.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-javaagent.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/browserstack-plugin.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/browserstack-plugin.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/performance-report.csv" beforeDir="false" afterPath="$PROJECT_DIR$/performance-report.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/BrowserStackDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/BrowserStackDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" afterDir="false" />
-    </list>
+    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="changed scroll method and made relevant updates to other places. &#10;Commented out BrowserStack class object from everywhere but still it is being used somehow.. need to check where it is being used from and 1 instance per session is being launched" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -336,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720007147013</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="changed scroll method and made relevant updates to other places. &#10;Commented out BrowserStack class object from everywhere but still it is being used somehow.. need to check where it is being used from and 1 instance per session is being launched">
+      <created>1720162411401</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1720162411401</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -394,7 +387,8 @@
     <MESSAGE value="Completed onboarding workflow with successful execution" />
     <MESSAGE value="Added Browser Stack code" />
     <MESSAGE value="removed apk files" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed apk files" />
+    <MESSAGE value="changed scroll method and made relevant updates to other places. &#10;Commented out BrowserStack class object from everywhere but still it is being used somehow.. need to check where it is being used from and 1 instance per session is being launched" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed scroll method and made relevant updates to other places. &#10;Commented out BrowserStack class object from everywhere but still it is being used somehow.. need to check where it is being used from and 1 instance per session is being launched" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
