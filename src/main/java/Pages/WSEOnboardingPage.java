@@ -31,43 +31,47 @@ public class WSEOnboardingPage {
     public void selectTitle(String title)
     {
         System.out.println("Lets select the title now");
-        sm.Tap(ol.dropdownTtile);
+        sm.clickByPath(ol.dropdownTtile);
         System.out.println("Dropdown Open, now get the list");
         sm.SelectListElementsbyPath(ol.listTitle,title);
+        System.out.println("Title Selected");
     }
     public void selectDateOfBirth(String expectedYear, int expectedMonth, int expectedDate) throws InterruptedException {
         System.out.println("Open Calendar");
         sm.clickByPath(ol.openCalendar);
         sm.clickByPath(ol.openYearList);
         sm.selectValueFromScrollableList(expectedYear,ol.listofYears,ol.scrollYearList, "Down");
-        System.out.print("Year is selected");
+        System.out.println("Year is selected");
         sm.selectDateFromCalendar(expectedYear,expectedMonth,expectedDate,ol.listofDays);
-        System.out.print("Date is selected");
+        System.out.println("Date is selected");
         sm.clickByPath(ol.btnSelectYear);
     }
     public void selectMaritalStatus(String maritalStatus)
     {
+        sm.ScrollToElementUp(ol.scrollPersonalInfoTab);
         System.out.println("Lets select the Marital Status now");
-        sm.Tap(ol.dropdownMaritalStatus);
+        sm.clickByPath(ol.dropdownMaritalStatus);
         System.out.println("Dropdown Open, now get the list");
         sm.SelectListElementsbyPath(ol.listMaritalStatus,maritalStatus);
         System.out.println("Marital Status is selected");
     }
-    public void selectGender(String gender)
-    {
-        sm.ScrollUp(ol.scrollPersonalInfoTab,80);
+    public void selectGender(String gender) throws InterruptedException {
+        sm.ScrollToElementUp(ol.scrollPersonalInfoTab);
         System.out.println("Lets select the gender now");
-        sm.Tap(ol.dropdownGender);
+        sm.ScrollToElementUp(ol.scrollPersonalInfoTab);
+        System.out.println("Now Sleep");
+        Thread.sleep(1000);
+        sm.clickByPath(ol.dropdownGender);
         System.out.println("Dropdown Open, now get the list");
         sm.SelectListElementsbyPath(ol.listGender,gender);
         System.out.println("Gender is Selected");
     }
     public void continueToCitizenshipTab()
     {
-        sm.clickByPath(ol.btnProfileContinue);
+      //  sm.clickByPath(ol.btnProfileContinue);
     }
     public void selectCitizenship(String expectedCitizenshipValue) throws InterruptedException {
-        sm.Tap(ol.dropdownCountry);
+        sm.clickByPath(ol.dropdownCountry);
         sm.selectValueFromScrollableList(expectedCitizenshipValue, ol.listOfCountries,ol.scrollListOfCountries, "Up");
         sm.clickByPath(ol.btnSelectCountry);
     }
@@ -80,7 +84,7 @@ public class WSEOnboardingPage {
         sm.clickByPath(ol.btnCitizenshipContinue);
     }
     public void selectHomeCountry(String expectedHomeAddressValue) throws InterruptedException {
-        sm.Tap(ol.dropdownCountry);
+        sm.clickByPath(ol.dropdownCountry);
         sm.selectValueFromScrollableList(expectedHomeAddressValue,ol.listOfCountries,ol.scrollListOfCountries,"Up");
         sm.clickByPath(ol.btnSelectCountry);
     }
@@ -103,12 +107,8 @@ public class WSEOnboardingPage {
         sm.sendKeysByPath(ol.txtAddress2, expectedAddress2Value);
     }
     public void enterPhoneNumber(String expectedPhoneNumberValue, String expectedCountryCodeValue) throws InterruptedException {
-        sm.ScrollUp(ol.scrollHomeAddressTab,100);
-        sm.ScrollUp(ol.scrollHomeAddressTab,100);
-        sm.ScrollUp(ol.scrollHomeAddressTab,500);
-        sm.ScrollUp(ol.scrollHomeAddressTab,200);
-        sm.ScrollUp(ol.scrollHomeAddressTab,100);
-        sm.ScrollUp(ol.scrollHomeAddressTab,100);
+        sm.ScrollToElementUp();
+
         sm.clickByPath(ol.dropdownOfCountryCode);
         sm.selectValueFromScrollableList(expectedCountryCodeValue,ol.listOfCountries,ol.scrollListOfCountries,"Up");
         sm.clickByPath(ol.btnSelectCountry);
@@ -118,7 +118,7 @@ public class WSEOnboardingPage {
         sm.clickByPath(ol.btnHomeAddressContinue);
     }
     public void selectBankCountry(String expectedBankCountry) throws InterruptedException {
-        sm.Tap(ol.dropdownBankCountry);
+        sm.clickByPath(ol.dropdownBankCountry);
         sm.selectValueFromScrollableList(expectedBankCountry,ol.listOfCountries,ol.scrollListOfCountries,"Up");
         sm.clickByPath(ol.btnSelectCountry);
     }
@@ -148,10 +148,10 @@ public class WSEOnboardingPage {
     {
         sm.sendKeysByPath(ol.txtEmergencyLastName,lastName);
     }
-    public void selectRelationship(String relationsship)
+    public void selectRelationship(String relationship)
     {
         sm.clickByPath(ol.dropdownRelation);
-        sm.SelectListElementsbyPath(ol.listOfRelations,relationsship);
+        sm.SelectListElementsbyPath(ol.listOfRelations,relationship);
         System.out.println("relation is selected");
     }
     public void enterEmail(String email)

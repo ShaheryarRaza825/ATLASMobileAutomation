@@ -213,17 +213,17 @@ public class StepDefinition {
     }
     @Given("user is present on splash screen page")
     public void user_is_present_on_splash_screen_page() {
-        //lp.userIsPresentOnSplashScreen();
+        lp.userIsPresentOnSplashScreen();
     }
 
     @Then("user clicks the login button button on splash screen")
     public void user_clicks_the_login_button_button_on_splash_screen() {
-        //lp.SplashScreenLogin();
+        lp.SplashScreenLogin();
     }
 
     @Given("user is present on login page")
     public void user_is_present_on_login_page() {
-        //lp.userIsPresentOnLoginPage();
+        lp.userIsPresentOnLoginPage();
     }
 
    @Given("user enters value in email field")
@@ -328,35 +328,35 @@ public class StepDefinition {
 
     @Given("user is present on onboarding landing page")
     public void userIsPresentOnOnboardingLandingPage() {
-  //      wop.verifyUserIsPresentOnOnboardingLandingPage();
+        wop.verifyUserIsPresentOnOnboardingLandingPage();
     }
 
     @Then("user should click the Continue button below")
     public void userShouldClickTheContinueButtonBelow() {
-//        wop.continueToOnboarding();
+        wop.continueToOnboarding();
     }
 
     @Then("user can skip uploading profile picture")
     public void userCanSkipUploadingProfilePicture() {
-        //wop.skipProfilePic();
+        wop.skipProfilePic();
     }
 
     @And("user will be present on Profile tab")
     public void userWillBePresentOnProfileTab() {
-        //wop.userPresentOnProfile("Profile");
+        wop.userPresentOnProfile("Profile");
     }
 
     @Then("user enters values for the fields on PersonalInformation tab")
     public void userEntersValuesForTheFieldsOnPersonalInformationTab() throws InterruptedException {
-    /*    wop.selectTitle("Mr.");
-        wop.selectDateOfBirth("2004",6,11);
-        wop.selectMaritalStatus("Single");
-        wop.selectGender("Male");*/
+        wop.selectTitle("Mr.");
+        wop.selectDateOfBirth("2004",7,11);
+        wop.selectMaritalStatus("Married");
+        wop.selectGender("Male");
     }
 
     @And("user clicks the profile continue button")
     public void userClicksTheProfileContinueButton() {
-       // wop.continueToCitizenshipTab();
+   //    wop.continueToCitizenshipTab();
     }
 
     @Then("user enters values for the fields on CitizenshipInformation tab")
@@ -367,7 +367,7 @@ public class StepDefinition {
 
     @Then("user enters the values for the fields on HomeAddress tab")
     public void userEntersTheValuesForTheFieldsOnHomeAddressTab() throws InterruptedException {
-      /*  wop.selectHomeCountry("Canada");
+     /*  wop.selectHomeCountry("Canada");
         wop.enterCity("Toronto");
         wop.enterProvince("Ontario");
         wop.enterZipcode("23435");
@@ -393,38 +393,38 @@ public class StepDefinition {
 
     @And("user clicks the Submit button")
     public void userClicksTheSubmitButton() {
-     //   wop.submitOnboarding();
+    // wop.submitOnboarding();
     }
 
     @And("user clicks the continue button on accounthodlderinfo tab")
     public void userClicksTheContinueButtonOnAccounthodlderinfoTab() {
-        //wop.continueAndSkipAccountHolderInfo();
+        //  wop.continueAndSkipAccountHolderInfo();
     }
 
     @Then("user enters the values for the fields on General Information tab")
     public void userEntersTheValuesForTheFieldsOnGeneralInformationTab() {
-        //wop.selectSameAsHomeAddress();
+      //  wop.selectSameAsHomeAddress();
     }
 
 
     @And("user clicks the continue button on general info tab")
     public void userClicksTheContinueButtonOnGeneralInfoTab() {
-        //wop.continueToEmergency();
+      //  wop.continueToEmergency();
     }
 
     @And("user clicks the citizenship continue button")
     public void userClicksTheCitizenshipContinueButton() {
-        //wop.continueToHomeAddressTab();
+      //  wop.continueToHomeAddressTab();
     }
 
     @And("user clicks the homeaddress continue button")
     public void userClicksTheHomeaddressContinueButton() {
-       //     wop.continueToBankingTab();
+      //      wop.continueToBankingTab();
         }
 
     @Then("user logsout of the application")
     public void userLogsoutOfTheApplication() {
-      //  wop.logoutOfTheApp();
+      // wop.logoutOfTheApp();
     }
 }
 

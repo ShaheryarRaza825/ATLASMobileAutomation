@@ -9,10 +9,7 @@ import java.util.Map;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
-import io.cucumber.java.BeforeAll;
 import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.yaml.snakeyaml.Yaml;
 public class BrowserStackDriver {
 
@@ -29,7 +26,7 @@ public class BrowserStackDriver {
     }
 
 
-    public void setUp() throws Exception {
+    public AndroidDriver setUp() throws Exception {
         options = new UiAutomator2Options();
         userName = System.getenv("BROWSERSTACK_USERNAME") != null ? System.getenv("BROWSERSTACK_USERNAME") : (String) browserStackYamlMap.get("userName");
         accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY") != null ? System.getenv("BROWSERSTACK_ACCESS_KEY") : (String) browserStackYamlMap.get("accessKey");
@@ -38,7 +35,8 @@ public class BrowserStackDriver {
         options.setCapability("appium:platformVersion", "12.0");
 
         driver = new AndroidDriver(new URL(String.format("https://%s:%s@hub.browserstack.com/wd/hub", userName , accessKey)), options);
-        //return driver;
+        return driver;
+
     }
 
     @After

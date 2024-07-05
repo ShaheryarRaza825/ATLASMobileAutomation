@@ -4,6 +4,7 @@ import Hooks.Hook;
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
 //import io.appium.java_client.android.driver;
+import io.appium.java_client.android.AndroidDriver;
 import org.ajbrown.namemachine.NameGenerator;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Pause;
@@ -33,10 +34,10 @@ public class SupportMethods extends BrowserStackDriver {
 
     SoftAssert softAssert = new SoftAssert();
     DriverManager dm = new DriverManager();
-    BrowserStackDriver bsd = new BrowserStackDriver();
+    //BrowserStackDriver bsd = new BrowserStackDriver();
     Hook hook;
-    //public driver driver = dm.getDriver();
-    //private driver driver = bsd.setUp();
+    public AndroidDriver driver = dm.getDriver();
+    //private AndroidDriver driver = bsd.setUp();
     public WebDriver webDriver = dm.getWebDriver();
     long Timeout = 30;
     List<WebElement> listItems;
@@ -248,17 +249,20 @@ public class SupportMethods extends BrowserStackDriver {
     }
 
     public void SelectListElementsbyPath(String path, String selectValue) {
+        System.out.println("entered select method");
         int attempts = 0;
         boolean elementClicked = false;
         while (!elementClicked && attempts < 3) {
             try {
                 if (path.contains("/hierarchy/") || path.contains("//android.view")) {
+                    System.out.println("entered try catch for xpath");
                     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
                     List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(path)));
                     System.out.println("size of list is " + listOfElements.size());
                     for (WebElement e : listOfElements) {
                         System.out.println(e.getText());
                         if (e.getText().equals(selectValue)) {
+                            System.out.println("lets click");
                             e.click();
                             elementClicked = true;
                             break;
@@ -266,7 +270,9 @@ public class SupportMethods extends BrowserStackDriver {
                     }
                     break;
 
-                } else if (path.contains("com.atlashxm") || path.contains("android:id")) {
+                }
+                else if (path.contains("com.atlashxm") || path.contains("android:id")) {
+                    System.out.println("entered try catch for id");
                     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
                     List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id(path)));
                     System.out.println("size of list is " + listOfElements.size());
@@ -274,6 +280,7 @@ public class SupportMethods extends BrowserStackDriver {
                         wait.until((ExpectedConditions.elementToBeClickable(By.id(path))));
                         System.out.println(e.getText());
                         if (e.getText().equals(selectValue)) {
+                            System.out.println("lets click");
                             e.click();
                             elementClicked = true;
                             break;
@@ -286,7 +293,7 @@ public class SupportMethods extends BrowserStackDriver {
                 attempts++;
                 System.out.println("Exception caught. Retrying attempt " + attempts);
             }
-            ScrollUp(path, 90);
+            ScrollToElementUp(path);
         }
     }
 
@@ -402,10 +409,12 @@ public class SupportMethods extends BrowserStackDriver {
                 }
                 else {
                     if (scrollDirection.equals("Down")) {
-                        ScrollDown(scrollListPath, 80);
+                       // ScrollDown(scrollListPath, 80);
+                    ScrollToElementDown();
                         attempts++; // Increment the number of attempts
                     } else if (scrollDirection.equals("Up")) {
-                        ScrollUp(scrollListPath, 80);
+                       // ScrollUp(scrollListPath, 80);
+                        ScrollToElementUp();
                         attempts++; // Increment the number of attempts
                     }
                 }
@@ -419,6 +428,7 @@ public class SupportMethods extends BrowserStackDriver {
     }
 
     public void selectDateFromCalendar(String expectedYear, int expectedMonth, int expectedDay, String dateValuesList) throws InterruptedException {
+        System.out.println("lets select date");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         int expectedYearInt = Integer.parseInt(expectedYear);
         LocalDate expectedDate = LocalDate.of(expectedYearInt, expectedMonth, expectedDay);
@@ -436,19 +446,28 @@ public class SupportMethods extends BrowserStackDriver {
 
         // Click the date element
         dateElement.click();
+        System.out.println("Date selected");
     }
 
     /*public void ScrollToElement(String scrollPersonalInfoTab) {
 
     }*/
 
-    public void ScrollToElement(String resourceId)
+    public void ScrollToElementDown()
     {
         try {
+            System.out.println("entered Scroll Down");
             // Use UiScrollable to scroll until the element with the specified content description is visible
-            driver.findElement(AppiumBy.androidUIAutomator(   "new UiScrollable(new UiSelector().scrollable(true))." +
-                    "scrollIntoView(new UiSelector().resourceIdMatches(\".*" + resourceId + ".*\"));"));
-            driver.findElement(AppiumBy.androidUIAutomator(   "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().resourceId(\""+resourceId+"\").instance(0))"));
+          //  driver.findElement(AppiumBy.androidUIAutomator(   "new UiScrollable(new UiSelector().scrollable(true))." +
+           //         "scrollIntoView(new UiSelector().resourceIdMatches(\".*" + resourceId + ".*\"));"));
+            /*driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true))." +
+                    "scrollIntoView(new UiSelector().textContains(\"2001\"))")).click();
+            driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true))." +
+                    "scrollIntoView(new UiSelector().text(\"2012\"))"));
+            driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().description(\""+resourceId+"\")).scrollForward()"));*/
+            driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiScrollable(new UiSelector().scrollable(true)).scrollBackward()"));
+            //driver.findElement(AppiumBy.androidUIAutomator(   "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().resourceId(\""+resourceId+"\").instance(0))"));
           //  driver.findElement(AppiumBy.androidUIAutomator(   "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollToEnd(10);"));
 /*            driver.findElement(AppiumBy.androidUIAutomator(  "new UiScrollable(new UiSelector().scrollable(true))" +
                     ".scrollIntoView(new UiSelector().resourceIdMatches(\".*"+resourceId+".*\").text(\".*"+expectedText+".*\"))"));*/
@@ -456,6 +475,52 @@ public class SupportMethods extends BrowserStackDriver {
         } catch (NoSuchElementException e) {
             System.out.println("Element not found using UiScrollable: " + e.getMessage());
         } catch (Exception e) {
+            System.out.println("An error occurred while scrolling: " + e.getMessage());
+        }
+    }
+    public void ScrollToElementUp() {
+        try {
+            System.out.println("entered Scroll Up");
+            driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiScrollable(new UiSelector().scrollable(true)).scrollForward()"));
+            System.out.println("Scroll success");
+        }
+     catch (NoSuchElementException e)
+        {
+            System.out.println("Element not found using UiScrollable: " + e.getMessage());
+        }
+        catch (Exception e)
+        {
+            System.out.println("An error occurred while scrolling: " + e.getMessage());
+        }
+    }
+    public void ScrollToElementUp(String resourceId) {
+        try {
+            System.out.println("entered Scroll");
+            driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().resourceIdMatches(\""+resourceId+"\")).scrollForward()"));
+            System.out.println("Scroll success");
+        }
+        catch (NoSuchElementException e)
+        {
+            System.out.println("Element not found using UiScrollable: " + e.getMessage());
+        }
+        catch (Exception e)
+        {
+            System.out.println("An error occurred while scrolling: " + e.getMessage());
+        }
+    }
+    public void ScrollToElementDown(String resourceId) {
+        try {
+            System.out.println("entered Scroll");
+            driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().resourceIdMatches(\""+resourceId+"\")).scrollForward()"));
+            System.out.println("Scroll success");
+        }
+        catch (NoSuchElementException e)
+        {
+            System.out.println("Element not found using UiScrollable: " + e.getMessage());
+        }
+        catch (Exception e)
+        {
             System.out.println("An error occurred while scrolling: " + e.getMessage());
         }
     }

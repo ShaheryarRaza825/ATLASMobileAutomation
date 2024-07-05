@@ -22,9 +22,7 @@ public class Hook {
 
     @BeforeAll
     public static void before_or_after_all() throws Exception {
-        BrowserStackDriver bsd  = new BrowserStackDriver();
-        bsd.setUp();
-        //DriverManager.setupAndroidDriver();
+        DriverManager.setupAndroidDriver();
         //DriverManager.getWebDriver();
        // writePropertiesToFile();
     }
