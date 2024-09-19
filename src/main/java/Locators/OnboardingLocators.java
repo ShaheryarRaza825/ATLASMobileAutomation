@@ -13,9 +13,9 @@ public class OnboardingLocators {
     public String listofYears = "android:id/text1";
     public String btnSelectYear = "android:id/button1";
     public String listofDays = "//android.view.View[@content-desc='%s']";
-    public String dropdownMaritalStatus = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup[5]/android.view.ViewGroup/android.widget.Spinner/android.widget.TextView";
+    public String dropdownMaritalStatus = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.Spinner/android.widget.TextView";
     public String listMaritalStatus = "com.atlashxm.uat:id/text1";
-    public String dropdownGender = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup[6]/android.view.ViewGroup/android.widget.Spinner/android.widget.TextView";
+    public String dropdownGender = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup[5]/android.view.ViewGroup/android.widget.Spinner/android.widget.TextView";
     public String listGender = "com.atlashxm.uat:id/text1";
     public String btnProfileContinue = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.Button[1]";
     public String btnSkipProfielPic = "com.atlashxm.uat:id/skip";

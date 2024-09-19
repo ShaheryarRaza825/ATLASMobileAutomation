@@ -21,9 +21,6 @@ platforms:
   - platformName: android
     deviceName: OnePlus 9
     platformVersion: 11.0
-  - platformName: android
-    deviceName: Xiaomi Redmi Note 9
-    platformVersion: 10.0
 
 source: java:appium-intellij:v1.1.4
 # Test Observability is an intelligent test reporting & debugging product. It collects data using the SDK. Read more about what data is collected at https://www.browserstack.com/docs/test-observability/references/terms-and-conditions

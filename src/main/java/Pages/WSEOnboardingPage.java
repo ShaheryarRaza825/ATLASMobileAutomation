@@ -46,9 +46,12 @@ public class WSEOnboardingPage {
         System.out.println("Date is selected");
         sm.clickByPath(ol.btnSelectYear);
     }
-    public void selectMaritalStatus(String maritalStatus)
-    {
+    public void selectMaritalStatus(String maritalStatus) throws InterruptedException {
         sm.ScrollToElementUp(ol.scrollPersonalInfoTab);
+        sm.ScrollToElementUp(ol.scrollPersonalInfoTab);
+        sm.ScrollToElementUp(ol.scrollPersonalInfoTab);
+       // System.out.println("Now Sleep");
+       // Thread.sleep(2000);
         System.out.println("Lets select the Marital Status now");
         sm.clickByPath(ol.dropdownMaritalStatus);
         System.out.println("Dropdown Open, now get the list");
@@ -56,11 +59,9 @@ public class WSEOnboardingPage {
         System.out.println("Marital Status is selected");
     }
     public void selectGender(String gender) throws InterruptedException {
-        sm.ScrollToElementUp(ol.scrollPersonalInfoTab);
         System.out.println("Lets select the gender now");
-        sm.ScrollToElementUp(ol.scrollPersonalInfoTab);
-        System.out.println("Now Sleep");
-        Thread.sleep(1000);
+       // System.out.println("Now Sleep");
+        //Thread.sleep(1000);
         sm.clickByPath(ol.dropdownGender);
         System.out.println("Dropdown Open, now get the list");
         sm.SelectListElementsbyPath(ol.listGender,gender);
@@ -68,7 +69,7 @@ public class WSEOnboardingPage {
     }
     public void continueToCitizenshipTab()
     {
-      //  sm.clickByPath(ol.btnProfileContinue);
+        sm.clickByPath(ol.btnProfileContinue);
     }
     public void selectCitizenship(String expectedCitizenshipValue) throws InterruptedException {
         sm.clickByPath(ol.dropdownCountry);

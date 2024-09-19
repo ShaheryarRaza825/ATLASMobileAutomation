@@ -356,24 +356,24 @@ public class StepDefinition {
 
     @And("user clicks the profile continue button")
     public void userClicksTheProfileContinueButton() {
-   //    wop.continueToCitizenshipTab();
+       wop.continueToCitizenshipTab();
     }
 
     @Then("user enters values for the fields on CitizenshipInformation tab")
     public void userEntersValuesForTheFieldsOnCitizenshipInformationTab() throws InterruptedException {
-       /* wop.selectCitizenship("Canada");
-        wop.enterNationalId("31314");*/
+        wop.selectCitizenship("Canada");
+        wop.enterNationalId("31314");
     }
 
     @Then("user enters the values for the fields on HomeAddress tab")
     public void userEntersTheValuesForTheFieldsOnHomeAddressTab() throws InterruptedException {
-     /*  wop.selectHomeCountry("Canada");
+        wop.selectHomeCountry("Canada");
         wop.enterCity("Toronto");
         wop.enterProvince("Ontario");
         wop.enterZipcode("23435");
         wop.enterAddress1("House 10303");
         wop.enterAddress2("Street 4949");
-        wop.enterPhoneNumber("34103040676","Canada");*/
+        wop.enterPhoneNumber("34103040676","Canada");
     }
 
     @Then("user enters the values for the fields on Banking tab")
@@ -414,12 +414,12 @@ public class StepDefinition {
 
     @And("user clicks the citizenship continue button")
     public void userClicksTheCitizenshipContinueButton() {
-      //  wop.continueToHomeAddressTab();
+        wop.continueToHomeAddressTab();
     }
 
     @And("user clicks the homeaddress continue button")
     public void userClicksTheHomeaddressContinueButton() {
-      //      wop.continueToBankingTab();
+            wop.continueToBankingTab();
         }
 
     @Then("user logsout of the application")

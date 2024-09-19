@@ -34,10 +34,10 @@ public class SupportMethods extends BrowserStackDriver {
 
     SoftAssert softAssert = new SoftAssert();
     DriverManager dm = new DriverManager();
-    //BrowserStackDriver bsd = new BrowserStackDriver();
+    BrowserStackDriver bsd = new BrowserStackDriver();
     Hook hook;
-    public AndroidDriver driver = dm.getDriver();
-    //private AndroidDriver driver = bsd.setUp();
+    //public AndroidDriver driver = dm.getDriver();
+    private AndroidDriver driver = bsd.setUp();
     public WebDriver webDriver = dm.getWebDriver();
     long Timeout = 30;
     List<WebElement> listItems;
@@ -104,17 +104,20 @@ public class SupportMethods extends BrowserStackDriver {
         try {
             if (path.contains("/hierarchy/") || path.contains("//android.view")) {
                 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
                 WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(path)));
                 element.click();
                 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
             } else if (path.contains("com.atlashxm") || path.contains("android:id")) {
                 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Timeout));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
                 WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(path)));
                 element.click();
                 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             } else if (path.contains("//*") || path.contains("/html")) {
                 WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(Timeout));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
                 WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(path)));
                 element.click();
                 webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
