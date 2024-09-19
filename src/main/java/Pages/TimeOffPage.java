@@ -1,9 +1,7 @@
 package Pages;
 
-import Locators.LoginLocators;
 import Locators.TimeoffLocators;
 import Utils.SupportMethods;
-import io.appium.java_client.android.AndroidDriver;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -23,13 +21,12 @@ public class TimeOffPage {
     }
     public void UserNavigateToPTOPage() throws InterruptedException {
         System.out.println("Navigate to Timeoff");
-        Thread.sleep(5000);
         sm.clickByPath(timeoffLocators.btnRequestTimeoff);
     }
     public void UserSelectsTimeOffType()
     {
         sm.clickByPath(timeoffLocators.dropdownTimeOffType);
-        sm.getElementTextandClick(timeoffLocators.optionTimeOffType);
+        sm.SelectListElementsbyPath(timeoffLocators.optionTimeOffType, "Vacation");
         //sm.clickByPath(timeoffLocators.optionTimeOffType);
     }
     public void UserSelectsFromDate()

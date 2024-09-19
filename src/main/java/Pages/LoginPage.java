@@ -24,7 +24,7 @@ public class LoginPage {
     }
     public void userIsPresentOnSplashScreen() {
         System.out.println("Checking for Splash Screen now");
-        sm.verifyElement(loginLocators.pathSplashScreenLoginBtn, "Login");
+        sm.verifyElement(loginLocators.pathSplashScreenLoginBtn, "Log in");
         System.out.println("Splash Screen Page Verified");
     }
     public void userIsPresentOnLoginPage() {
@@ -47,9 +47,11 @@ public class LoginPage {
     public void loginToApp()
     {
         sm.clickByPath(loginLocators.loginBtn);
+       // System.out.println("Enter OTP");
+       // sm.sendKeysByPath(loginLocators.MFA,"123456");
     }
     public void verifyUserLoggedIn() throws InterruptedException {
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         sm.verifyElement(loginLocators.userOnDashboard, "Hi");
     }
 

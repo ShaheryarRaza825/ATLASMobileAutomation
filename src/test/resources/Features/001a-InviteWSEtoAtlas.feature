@@ -12,6 +12,13 @@ Feature:
    Then Admin clicks the Add Employee button
     Then user should enter all details of WSE
     And user should click the Continue button
-    Given user is present on WSE Personal Information page
+    Given user is present on Profile page
+    Then user should click the Next button to move to Job Details page
+    Then user should click the Next button to move to Documents page
+    Then user should click the Next button to move to Pay Details page
+    Then user should click the Next button to move to Time off page
+    Then user should click the Next button to move to Invite WSE page
+    Then user should click the Invite button to Invite the user to ATLAS
+    And WSE should be invited successfully
 
 

@@ -7,12 +7,27 @@
     <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Completed Step Definition and Page class for HomeAddress tab">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/ExpenseRequestorLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/ExpenseRequestorLocators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/LoginLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/LoginLocators.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Locators/OnboardingLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/OnboardingLocators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/TimeoffLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/TimeoffLocators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/TimerWidgetLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/TimerWidgetLocators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/TimesheetLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/TimesheetLocators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/WebAddWSELocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/WebAddWSELocators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/ExpenseRequestorPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/ExpenseRequestorPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/InviteWSEtoAtlasPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/InviteWSEtoAtlasPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/TimeOffPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/TimeOffPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/TimerWidgetPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/TimerWidgetPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/TimesheetPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/TimesheetPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Runner/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/Runner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinition/WebSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinition/WebSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/001a-InviteWSEtoAtlas.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/001a-InviteWSEtoAtlas.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/Features/OnboardingUser.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/OnboardingUser.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +69,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -62,7 +77,7 @@
       <recent name="Hooks" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.Runner">
     <configuration name="Feature: 001-LoginFeature" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/001-LoginFeature.feature" />
@@ -155,11 +170,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Feature: LoginFeature" />
-        <item itemvalue="Cucumber Java.Feature: 001-LoginFeature" />
         <item itemvalue="JUnit.Runner" />
-        <item itemvalue="Cucumber Java.Scenario: Login to Atlas App (1)" />
-        <item itemvalue="Cucumber Java.Scenario: Login to Atlas App" />
       </list>
     </recent_temporary>
   </component>
@@ -305,59 +316,42 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Pages/ExpenseRequestorPage.java</url>
-          <line>77</line>
+          <line>78</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
-          <line>168</line>
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
-          <line>161</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
-          <line>164</line>
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java</url>
-          <line>387</line>
+          <line>386</line>
           <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
-          <line>171</line>
-          <option name="timeStamp" value="109" />
+          <line>175</line>
+          <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
-          <line>163</line>
-          <option name="timeStamp" value="115" />
+          <url>file://$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java</url>
+          <line>147</line>
+          <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
-          <line>153</line>
-          <option name="timeStamp" value="116" />
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/InviteWSEtoAtlasPage.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="144" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="120" />
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/ExpenseRequestorPage.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="145" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Runner_java$Runner.ic" NAME="Runner Coverage Results" MODIFIED="1718107498625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Runner.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/AtlasMobileWithoutBrowserStack$Runner.ic" NAME="Runner Coverage Results" MODIFIED="1720094771144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Runner.*</FILTER>
     </SUITE>
   </component>

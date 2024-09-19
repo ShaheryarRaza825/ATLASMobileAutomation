@@ -46,7 +46,7 @@ public class WebSteps {
     }
 
     @When("Admin clicks the peoples tab")
-    public void admin_clicks_the_peoples_tab() {
+    public void admin_clicks_the_peoples_tab() throws InterruptedException {
         iwap.visitPeopleTab();
     }
 
@@ -67,12 +67,45 @@ public class WebSteps {
 
     @Then("user should click the Continue button")
     public void user_should_click_the_continue_button() {
-
+        iwap.cotninueToProfile();
     }
 
-    @Given("user is present on WSE Personal Information page")
+    @Given("user is present on Profile page")
     public void user_is_present_on_wse_personal_information_page() {
-
+        iwap.userPresentOnProfilePage();
     }
 
+    @Then("user should click the Next button to move to Job Details page")
+    public void userShouldClickTheNextButtonToMoveToJobDetailsPage() throws InterruptedException {
+        iwap.continueToJobDetails();
+    }
+
+    @Then("user should click the Next button to move to Documents page")
+    public void userShouldClickTheNextButtonToMoveToDocumentsPage() throws InterruptedException {
+        iwap.continueToDocuments();
+    }
+
+    @Then("user should click the Next button to move to Pay Details page")
+    public void userShouldClickTheNextButtonToMoveToPayDetailsPage() throws InterruptedException {
+        iwap.continueToPayDetails();
+    }
+
+    @Then("user should click the Next button to move to Time off page")
+    public void userShouldClickTheNextButtonToMoveToTimeOffPage() throws InterruptedException {
+        iwap.continueToTimeOff();
+    }
+
+    @Then("user should click the Next button to move to Invite WSE page")
+    public void userShouldClickTheNextButtonToMoveToInviteWSEPage() throws InterruptedException {
+        iwap.continueToInvitePage();
+    }
+
+    @Then("user should click the Invite button to Invite the user to ATLAS")
+    public void userShouldClickTheInviteButtonToInviteTheUserToATLAS() {
+        iwap.inviteUserToAtlas();
+    }
+
+    @And("WSE should be invited successfully")
+    public void wseShouldBeInvitedSuccessfully() {
+    }
 }

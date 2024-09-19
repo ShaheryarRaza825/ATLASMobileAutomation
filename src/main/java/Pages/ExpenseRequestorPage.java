@@ -58,16 +58,17 @@ public class ExpenseRequestorPage {
     }
     public void selectAttachment()
     {
-        sm.ScrollUp(erl.scrollExpenseTab,100);
+        sm.ScrollToElementUp(erl.scrollExpenseTab);
         sm.clickByPath(erl.btnOpenAttachmentSelection);
         sm.clickByPath(erl.btnSelectUploadOption);
         sm.clickByPath(erl.selectAttachment);
-        sm.ScrollUp(erl.scrollExpenseTab,50);
+        sm.ScrollToElementUp(erl.scrollExpenseTab);
         sm.waitForElementToDisappear(erl.progressBar);
     }
     public void enterComments()
     {
         sm.sendKeysByPath(erl.txtComments,"Automation Comments");
+        sm.ScrollToElementUp(erl.btnSubmitExepnseClaim);
     }
     public void submitExpense()
     {

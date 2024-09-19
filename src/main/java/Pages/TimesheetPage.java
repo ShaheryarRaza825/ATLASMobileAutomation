@@ -31,17 +31,17 @@ public class TimesheetPage {
     }
     public void userPresentOnEditTimesheet()
     {
-        sm.verifyElement(tl.editTimesheetHeading,"Clock In/Out");
+        sm.verifyElement(tl.editTimesheetHeading,"Edit Time for");
     }
     public void selectStartTime() throws MalformedURLException {
         sm.clickByPath(tl.openStartTimePicker);
-        sm.ScrollDown(tl.timeNumberPicker, 50);
+        sm.ScrollTimePicker(tl.timeNumberPicker,"Backward");
         sm.clickByPath(tl.confirmStartEndTime);
     }
     public void selectEndTime()
     {
         sm.clickByPath(tl.openEndTimePicker);
-        sm.ScrollUp(tl.timeNumberPicker,50);
+        sm.ScrollTimePicker(tl.timeNumberPicker,"Forward");
         sm.clickByPath(tl.confirmStartEndTime);
     }
     public void updatTime()

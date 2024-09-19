@@ -13,7 +13,7 @@ public class TimerWidgetPage {
     }
     public void userOnDashboard()
     {
-        sm.getElementText(twl.dashboard);
+        sm.getElementText(twl.dashboardPresence);
     }
 
     public void UserClocksIn()
@@ -31,5 +31,9 @@ public class TimerWidgetPage {
     public void UserClockedOutSuccessfully()
     {
         sm.verifyElement(twl.successPopup, "Clocked out successfully");
+    }
+    public void navigateToHomePage()
+    {
+        sm.clickByPath(twl.goToHomeTab);
     }
 }

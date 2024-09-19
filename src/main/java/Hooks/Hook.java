@@ -20,7 +20,7 @@ public class Hook {
     @BeforeAll
     public static void beforeAll() throws IOException {
         DriverManager.setupAndroidDriver();
-        //DriverManager.getWebDriver();
+        DriverManager.getWebDriver();
        // writePropertiesToFile();
     }
     public static void writePropertiesToFile() throws IOException {

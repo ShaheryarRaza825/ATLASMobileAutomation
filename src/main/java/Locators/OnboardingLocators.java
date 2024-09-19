@@ -19,7 +19,8 @@ public class OnboardingLocators {
     public String listGender = "com.atlashxm.uat:id/text1";
     public String btnProfileContinue = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.Button[1]";
     public String btnSkipProfielPic = "com.atlashxm.uat:id/skip";
-    public String scrollPersonalInfoTab = "com.atlashxm.uat:id/constraintLayout8";
+    public String scrollPersonalInfoTab = "com.atlashxm.uat:id/constraintLayout9";
+    public String scrollPersonalInfoTab2 = "com.atlashxm.uat:id/rv_on_boarding";
     public String dropdownCountry ="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.TextView[2]";
     public String listOfCountries = "com.atlashxm.uat:id/textView5";
     public String scrollListOfCountries = "com.atlashxm.uat:id/selectCountryRv";
@@ -32,6 +33,7 @@ public class OnboardingLocators {
     public String txtAddress1 = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup[5]/android.view.ViewGroup/android.widget.EditText";
     public String txtAddress2 = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup[6]/android.view.ViewGroup/android.widget.EditText";
     public String scrollHomeAddressTab = "com.atlashxm.uat:id/constraintLayout8";
+    //public String scrollHomeAddressTab = "com.atlashxm.uat:id/et_number";
     public String dropdownOfCountryCode = "com.atlashxm.uat:id/chevronViewLeft";
     public String txtPhoneNumber = "com.atlashxm.uat:id/et_number";
     public String btnHomeAddressContinue = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.Button[1]";
@@ -52,6 +54,6 @@ public class OnboardingLocators {
     public String btnDocumentsToSignContinue = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.Button[1]";
     public String btnDocumentsToUploadContinue = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.Button[1]";
     public String btnSubmitOnboarding = "com.atlashxm.uat:id/btnPrimary";
-    public String btnLogout = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.Button";
+    public String btnLogout = "com.atlashxm.uat:id/okButton";
 
 }

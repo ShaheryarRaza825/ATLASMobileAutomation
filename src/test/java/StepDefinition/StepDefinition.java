@@ -208,6 +208,8 @@ public class StepDefinition {
     @And("Expense should be submitted")
     public void expenseShouldBeSubmitted() {
         erp.expenseSubmittedSuccessfully();
+        twp.navigateToHomePage();
+
     }
     @Given("user is present on splash screen page")
     public void user_is_present_on_splash_screen_page() {
@@ -306,25 +308,22 @@ public class StepDefinition {
 
     @When("user clicks the save button")
     public void user_clicks_the_save_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       tp.UserSavesHours();
     }
 
     @When("user enters value in PTOcomments field")
     public void user_enters_value_in_pt_ocomments_field() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        tp.enterCommentsForPTO();
     }
 
     @When("user clicks the submit button")
     public void user_clicks_the_submit_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        tp.UserSubmitsPTO();
     }
 
 
-    @Given("user is present on onboarding landing page")
-    public void userIsPresentOnOnboardingLandingPage() {
+    @Then("user should be logged in successfully and present on onboarding landing page")
+    public void userShouldBeLoggedInSuccessfullyAndPresentOnOnboardingLandingPage(){
         wop.verifyUserIsPresentOnOnboardingLandingPage();
     }
 
@@ -346,9 +345,9 @@ public class StepDefinition {
     @Then("user enters values for the fields on PersonalInformation tab")
     public void userEntersValuesForTheFieldsOnPersonalInformationTab() throws InterruptedException {
         wop.selectTitle("Mr.");
-        wop.selectDateOfBirth("2004",6,11);
+        wop.selectDateOfBirth("2004",9,2);
         wop.selectMaritalStatus("Single");
-        wop.selectGender("Male");
+        wop.selectGender("Female");
     }
 
     @And("user clicks the profile continue button")
@@ -358,7 +357,7 @@ public class StepDefinition {
 
     @Then("user enters values for the fields on CitizenshipInformation tab")
     public void userEntersValuesForTheFieldsOnCitizenshipInformationTab() throws InterruptedException {
-        wop.selectCitizenship("Canada");
+        wop.selectCitizenship("Canada") ;
         wop.enterNationalId("31314");
     }
 
@@ -423,5 +422,7 @@ public class StepDefinition {
     public void userLogsoutOfTheApplication() {
         wop.logoutOfTheApp();
     }
+
+
 }
 
