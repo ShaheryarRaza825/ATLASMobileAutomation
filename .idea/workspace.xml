@@ -4,31 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Completed Step Definition and Page class for HomeAddress tab">
+    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="finalized the onboaring flow&#10;updated locators">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/ExpenseRequestorLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/ExpenseRequestorLocators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/LoginLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/LoginLocators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/OnboardingLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/OnboardingLocators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/TimeoffLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/TimeoffLocators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/TimerWidgetLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/TimerWidgetLocators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/TimesheetLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/TimesheetLocators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/WebAddWSELocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/WebAddWSELocators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/ExpenseRequestorPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/ExpenseRequestorPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/InviteWSEtoAtlasPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/InviteWSEtoAtlasPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/TimeOffPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/TimeOffPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/TimerWidgetPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/TimerWidgetPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/TimesheetPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/TimesheetPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Runner/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinition/WebSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinition/WebSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/001a-InviteWSEtoAtlas.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/001a-InviteWSEtoAtlas.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/OnboardingUser.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/OnboardingUser.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717678854145</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="finalized the onboaring flow&#10;updated locators">
+      <created>1726733551894</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1726733551894</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -309,7 +294,8 @@
     <MESSAGE value="Added onboarding feature&#10;Completed code for scrolling on Calendar list&#10;Completed selection of Date of Birth" />
     <MESSAGE value="Completed Profile Personal Info tab for Onboaridng&#10;Added ScrollToElementMethod &#10;Added Date selection method &#10;Added xpaths till emergency tab&#10;created methods for Profile Section" />
     <MESSAGE value="Completed Step Definition and Page class for HomeAddress tab" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed Step Definition and Page class for HomeAddress tab" />
+    <MESSAGE value="finalized the onboaring flow&#10;updated locators" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalized the onboaring flow&#10;updated locators" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

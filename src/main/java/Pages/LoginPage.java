@@ -25,6 +25,7 @@ public class LoginPage {
     public void userIsPresentOnSplashScreen() {
         System.out.println("Checking for Splash Screen now");
         sm.verifyElement(loginLocators.pathSplashScreenLoginBtn, "Log in");
+        sm.clickByPath(loginLocators.pathSplashScreenLoginBtn);
         System.out.println("Splash Screen Page Verified");
     }
     public void userIsPresentOnLoginPage() {
