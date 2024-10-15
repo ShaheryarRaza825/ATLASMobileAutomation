@@ -29,8 +29,8 @@ public class DriverManager {
         //will automatically be covered through UiAutomator2Options
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2); //optional- if it's not mentioned then it fine too as it
         //will automatically be covered through UiAutomator2Options
-        options.setDeviceName("743f64f0");
-        //options.setDeviceName("emulator-5554");
+        //options.setDeviceName("743f64f0");
+        options.setDeviceName("emulator-5554");
         //options.noReset();
         options.setFullReset(true);
        // options.setApp("C:\\Users\\FaizanJunani\\Desktop\\Appium Automation\\AtlasMobileJava\\src\\test\\resources\\apps\\app-UAT-debug 25.apk");

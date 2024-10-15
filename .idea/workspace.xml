@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="finalized the onboaring flow&#10;updated locators">
+    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="click login button code was missing on spalsh screen. Added that code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Runner/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/Runner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1726733551894</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="click login button code was missing on spalsh screen. Added that code">
+      <created>1727339068060</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1727339068060</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -295,16 +303,12 @@
     <MESSAGE value="Completed Profile Personal Info tab for Onboaridng&#10;Added ScrollToElementMethod &#10;Added Date selection method &#10;Added xpaths till emergency tab&#10;created methods for Profile Section" />
     <MESSAGE value="Completed Step Definition and Page class for HomeAddress tab" />
     <MESSAGE value="finalized the onboaring flow&#10;updated locators" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalized the onboaring flow&#10;updated locators" />
+    <MESSAGE value="click login button code was missing on spalsh screen. Added that code" />
+    <option name="LAST_COMMIT_MESSAGE" value="click login button code was missing on spalsh screen. Added that code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Pages/ExpenseRequestorPage.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java</url>
           <line>386</line>
@@ -327,8 +331,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Pages/ExpenseRequestorPage.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="145" />
+          <line>69</line>
+          <option name="timeStamp" value="146" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
