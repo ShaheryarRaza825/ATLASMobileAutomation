@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="click login button code was missing on spalsh screen. Added that code">
+    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Updated DeviceName capability">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Runner/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Runner/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +57,7 @@
       <recent name="Hooks" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Runner">
+  <component name="RunManager" selected="JUnit.TestRunner">
     <configuration name="Feature: 001-LoginFeature" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/001-LoginFeature.feature" />
@@ -132,7 +133,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Runner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AtlasMobileJava" />
       <extension name="coverage">
         <pattern>
@@ -141,7 +142,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Runner" />
-      <option name="MAIN_CLASS_NAME" value="Runner.Runner" />
+      <option name="MAIN_CLASS_NAME" value="Runner.TestRunner" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,7 +150,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Runner" />
+        <item itemvalue="JUnit.TestRunner" />
       </list>
     </recent_temporary>
   </component>
@@ -274,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1727339068060</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Updated DeviceName capability">
+      <created>1729005105062</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1729005105062</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -304,7 +312,8 @@
     <MESSAGE value="Completed Step Definition and Page class for HomeAddress tab" />
     <MESSAGE value="finalized the onboaring flow&#10;updated locators" />
     <MESSAGE value="click login button code was missing on spalsh screen. Added that code" />
-    <option name="LAST_COMMIT_MESSAGE" value="click login button code was missing on spalsh screen. Added that code" />
+    <MESSAGE value="Updated DeviceName capability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated DeviceName capability" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
