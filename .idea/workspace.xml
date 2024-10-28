@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Updated DeviceName capability">
+    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Updated Maven Compiler version to 17 from 19">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Runner/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729005105062</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Updated Maven Compiler version to 17 from 19">
+      <created>1729076554848</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1729076554848</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -313,7 +318,8 @@
     <MESSAGE value="finalized the onboaring flow&#10;updated locators" />
     <MESSAGE value="click login button code was missing on spalsh screen. Added that code" />
     <MESSAGE value="Updated DeviceName capability" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated DeviceName capability" />
+    <MESSAGE value="Updated Maven Compiler version to 17 from 19" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Maven Compiler version to 17 from 19" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
