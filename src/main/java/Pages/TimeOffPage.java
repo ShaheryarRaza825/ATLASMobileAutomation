@@ -29,15 +29,24 @@ public class TimeOffPage {
         sm.SelectListElementsbyPath(timeoffLocators.optionTimeOffType, "Vacation");
         //sm.clickByPath(timeoffLocators.optionTimeOffType);
     }
-    public void UserSelectsFromDate()
+    public void userSelectsPTODates()
     {
         sm.clickByPath(timeoffLocators.openFromCalendar);
-        sm.clickByPath(timeoffLocators.selectFromDate);
-        sm.clickByPath(timeoffLocators.confirmDate);
+       // sm.getListElementsbyPath(timeoffLocators.ToDateList,"15");
+        do {
+            String date[] = sm.generateDateForTimeOffRequest(timeoffLocators.selectFromDate, timeoffLocators.selectToDate);
+            sm.clickByPath(date[0]);
+            sm.clickByPath(timeoffLocators.confirmDate);
+            sm.clickByPath(timeoffLocators.openToCalendar);
+            sm.clickByPath(date[1]);
+            sm.clickByPath(timeoffLocators.confirmDate);
+        }
+            while(sm.getElementText(timeoffLocators.validationForAppliedTimeOff).equals("*You cannot request leave on days you have already applied for time off"));
     }
     public void UserSelectsToDate()
     {
         sm.clickByPath(timeoffLocators.openToCalendar);
+        sm.getListElementsbyPath(timeoffLocators.ToDateList,"15");
         sm.clickByPath(timeoffLocators.selectToDate);
         sm.clickByPath(timeoffLocators.confirmDate);
     }

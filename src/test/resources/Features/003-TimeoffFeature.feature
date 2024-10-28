@@ -6,8 +6,7 @@ PTO Submission
     When user clicks the request timeoff button
     And user is present on request timeoff page
     And user selects option for PTO
-    And user selects option for FromDate
-    And user selects option for ToDate
+    And user selects option for PTODates
     And user clicks the add hours button
     And user enters value in hours field
     And user clicks the save button

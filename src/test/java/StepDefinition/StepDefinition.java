@@ -158,14 +158,12 @@ public class StepDefinition {
 
     }
 
-    @And("user selects option for {string}")
+    /*@And("user selects option for {string}")
     public void userSelectsOptionFor(String keyword) throws MalformedURLException {
         if (keyword.equals("PTO")) {
             tp.UserSelectsTimeOffType();
-        } else if (keyword.equals("FromDate")) {
-            tp.UserSelectsFromDate();
-        } else if (keyword.equals("ToDate")) {
-            tp.UserSelectsToDate();
+        } else if (keyword.equals("PTODates")) {
+            tp.userSelectsPTODates();
         } else if (keyword.equals("start time")) {
             tsp.selectStartTime();
         } else if (keyword.equals("end time")) {
@@ -180,7 +178,7 @@ public class StepDefinition {
         else if(keyword.equals("attachment")){
             erp.selectAttachment();
         }
-    }
+    }*/
 
     @Then("PTO should be submitted successfully")
     public void ptoShouldBeSubmittedSuccessfully() {
@@ -286,14 +284,9 @@ public class StepDefinition {
         tp.UserSelectsTimeOffType();
     }
 
-    @When("user selects option for FromDate")
-    public void user_selects_option_for_from_date() {
-            tp.UserSelectsFromDate();
-    }
-
-    @When("user selects option for ToDate")
-    public void user_selects_option_for_to_date() {
-        tp.UserSelectsToDate();
+    @When("user selects option for PTODates")
+    public void user_selects_option_for_PTODates() {
+            tp.userSelectsPTODates();
     }
 
     @When("user clicks the add hours button")
@@ -424,5 +417,14 @@ public class StepDefinition {
     }
 
 
+    @Then("user selects option for start time")
+    public void userSelectsOptionForStartTime() throws MalformedURLException {
+        tsp.selectStartTime();
+    }
+
+    @Then("user selects option for end time")
+    public void userSelectsOptionForEndTime() {
+        tsp.selectEndTime();
+    }
 }
 

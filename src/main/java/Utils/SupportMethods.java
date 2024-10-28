@@ -13,11 +13,15 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
 import java.util.List;
+import java.util.Locale;
 import java.util.Properties;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -149,8 +153,9 @@ public class SupportMethods {
             }
     }
 
-    public void getElementText(String path) {
-        getTextFromElement(path);
+    public String getElementText(String path) {
+        //getTextFromElement(path);
+        return getTextFromElement(path);
     }
 
     public void ScrollUp(String path, int scroll) {
@@ -260,14 +265,29 @@ public class SupportMethods {
     }
 
     public void getListElementsbyPath(String path, String selectValue) {
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(Timeout));
-        List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(path)));
-        System.out.println("size of list is " + listOfElements.size());
-        for (WebElement e : listOfElements) {
-            System.out.println(e.getText());
-            if (e.getText().equals(selectValue)) {
-                e.click();
-                break;
+        if (path.contains("/hierarchy/") || path.contains("//android.view")) {
+            WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(Timeout));
+            List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(path)));
+            System.out.println("size of list is " + listOfElements.size());
+            for (WebElement e : listOfElements) {
+                System.out.println(e.getText());
+                if (e.getText().equals(selectValue)) {
+                    e.click();
+                    break;
+                }
+            }
+        }
+        else if(path.contains("com.atlashxm") || path.contains("android:id"))
+        {
+            WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(Timeout));
+            List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id(path)));
+            System.out.println("size of list is " + listOfElements.size());
+            for (WebElement e : listOfElements) {
+                System.out.println(e.getText());
+                if (e.getText().equals(selectValue)) {
+                    e.click();
+                    break;
+                }
             }
         }
     }
@@ -588,6 +608,43 @@ public class SupportMethods {
                 System.out.println(e.getMessage());
             }
         }
+        public String [] generateDateForTimeOffRequest(String pathFromDate, String pathToDate)
+        {
+            // Get the current date, month, and year
+            LocalDate currentDate = LocalDate.now();
+            System.out.println("Current Date is "+currentDate);
+            String month = currentDate.getMonth().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
+            String year = String.valueOf(currentDate.getYear());
+            System.out.println("Current Month is "+month+ "and Current Year is "+year);
+            Random rand = new Random();
+            LocalDate fromDate;
+            LocalDate toDate;
 
+            do {
+                // Generate random "from" and "to" dates within the current month
+                fromDate = generateRandomWeekdayInCurrentMonth(currentDate, rand);
+                toDate = fromDate.plusDays(1);
 
+                // Ensure "from" date is before "to" date
+            } while (!fromDate.isBefore(toDate));
+
+            // Format days for XPath
+            String formattedFromDate = String.format("%02d", fromDate.getDayOfMonth());
+            String formattedToDate = String.format("%02d", toDate.getDayOfMonth());
+            // Construct XPaths
+            String fromDateXPath = String.format(pathFromDate, formattedFromDate, month, year);
+            String toDateXPath = String.format(pathToDate, formattedToDate, month, year);
+
+            return new String[]{fromDateXPath,toDateXPath};
+
+        }
+    private LocalDate generateRandomWeekdayInCurrentMonth(LocalDate currentDate, Random rand) {
+        LocalDate randomDate;
+        do {
+            int day = rand.nextInt(currentDate.lengthOfMonth()) + 1;
+            randomDate = LocalDate.of(currentDate.getYear(), currentDate.getMonth(), day);
+            System.out.println("Random Date is "+randomDate);
+        } while (randomDate.getDayOfWeek() == DayOfWeek.SATURDAY || randomDate.getDayOfWeek() == DayOfWeek.SUNDAY);
+        return randomDate;
+    }
 }
