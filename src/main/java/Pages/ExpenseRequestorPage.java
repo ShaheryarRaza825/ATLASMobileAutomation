@@ -37,7 +37,8 @@ public class ExpenseRequestorPage {
     public void selectDateIncurred()
     {
         sm.clickByPath(erl.btnOpenCalendar);
-        sm.selectDateFromCalendar(erl.selectDate);
+        String date[] = sm.generateDatesForCalendar(erl.selectDateIncurred,null);
+        sm.clickByPath(date[0]);
         sm.clickByPath(erl.btnConfirmDate);
     }
     public void selectCategory()

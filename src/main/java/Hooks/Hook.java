@@ -21,6 +21,7 @@ public class Hook {
     public static void beforeAll() throws IOException {
         DriverManager.setupAndroidDriver();
         DriverManager.getWebDriver();
+
        // writePropertiesToFile();
     }
     public static void writePropertiesToFile() throws IOException {

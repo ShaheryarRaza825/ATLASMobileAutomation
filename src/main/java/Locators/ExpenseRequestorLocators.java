@@ -8,7 +8,7 @@ public class ExpenseRequestorLocators {
     public String txtExpenseTitle = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText";
     public String btnSaveandContinue = "com.atlashxm.uat:id/saveButton";
     public String btnOpenCalendar = "com.atlashxm.uat:id/calendarView";
-    public String selectDate = "03 September 2024";
+    public String selectDateIncurred = "//android.view.View[@content-desc='%s %s %s']";
     public String btnConfirmDate = "android:id/button1";
     public String openCategoryList = "com.atlashxm.uat:id/categoryView";
     public String searchForCategory = "com.atlashxm.uat:id/search_button";

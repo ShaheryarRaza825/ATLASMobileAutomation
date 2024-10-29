@@ -608,36 +608,49 @@ public class SupportMethods {
                 System.out.println(e.getMessage());
             }
         }
-        public String [] generateDateForTimeOffRequest(String pathFromDate, String pathToDate)
-        {
+        public String [] generateDatesForCalendar(String date1, String date2) {
             // Get the current date, month, and year
             LocalDate currentDate = LocalDate.now();
-            System.out.println("Current Date is "+currentDate);
+            System.out.println("Current Date is " + currentDate);
             String month = currentDate.getMonth().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
             String year = String.valueOf(currentDate.getYear());
-            System.out.println("Current Month is "+month+ "and Current Year is "+year);
+            System.out.println("Current Month is " + month + " and Current Year is " + year);
             Random rand = new Random();
             LocalDate fromDate;
-            LocalDate toDate;
+            LocalDate toDate = null;
+            String fromDateXPath;
+            String toDateXPath = null;
 
             do {
                 // Generate random "from" and "to" dates within the current month
                 fromDate = generateRandomWeekdayInCurrentMonth(currentDate, rand);
-                toDate = fromDate.plusDays(1);
 
-                // Ensure "from" date is before "to" date
-            } while (!fromDate.isBefore(toDate));
+                // If a second date is needed, calculate the "to" date as one day after "from" date
+                if (date2 != null) {
+                    toDate = fromDate.plusDays(1);
+                    // Format days for XPath
+                    String formattedToDate = String.format("%02d", toDate.getDayOfMonth());
+                    // Construct XPath
+                    toDateXPath = String.format(date2, formattedToDate, month, year);
+                }
 
-            // Format days for XPath
-            String formattedFromDate = String.format("%02d", fromDate.getDayOfMonth());
-            String formattedToDate = String.format("%02d", toDate.getDayOfMonth());
-            // Construct XPaths
-            String fromDateXPath = String.format(pathFromDate, formattedFromDate, month, year);
-            String toDateXPath = String.format(pathToDate, formattedToDate, month, year);
+                // Format days for XPath
+                String formattedFromDate = String.format("%02d", fromDate.getDayOfMonth());
+                // Construct XPath
+                fromDateXPath = String.format(date1, formattedFromDate, month, year);
 
-            return new String[]{fromDateXPath,toDateXPath};
-
+                // If "toDate" is used, ensure "fromDate" is before "toDate"
+            } while (date2 != null && !fromDate.isBefore(toDate));
+            if(date2 == null)
+            {
+                return new String[] {fromDateXPath};
+            }
+            else
+            {
+                return new String[] {fromDateXPath,toDateXPath};
+            }
         }
+
     private LocalDate generateRandomWeekdayInCurrentMonth(LocalDate currentDate, Random rand) {
         LocalDate randomDate;
         do {

@@ -32,7 +32,7 @@ public class TimeOffPage {
     public void userSelectsPTODates()
     {
         do {
-            String date[] = sm.generateDateForTimeOffRequest(timeoffLocators.selectFromDate, timeoffLocators.selectToDate);
+            String date[] = sm.generateDatesForCalendar(timeoffLocators.selectFromDate, timeoffLocators.selectToDate);
             sm.clickByPath(timeoffLocators.openFromCalendar);
             sm.clickByPath(date[0]);
             sm.clickByPath(timeoffLocators.confirmDate);

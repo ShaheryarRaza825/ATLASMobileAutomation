@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Update the TimeOffPage class. Open Calendar call was missing in the Do loop so included that">
+    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Commented Feature files in runner class to run directly from jenkins">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/ExpenseRequestorLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/ExpenseRequestorLocators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/ExpenseRequestorPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/ExpenseRequestorPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/TimeOffPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/TimeOffPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/004-Timesheet.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/004-Timesheet.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/005-ExpenseRequestorFeature.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/005-ExpenseRequestorFeature.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -318,7 +320,21 @@
       <option name="project" value="LOCAL" />
       <updated>1730187855523</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Removed keyword driven methods for all the feature files except ExpenseRequestor. &#10;Added navigation to homepage on timesheet submission&#10;Uncommented expense code from step definition">
+      <created>1730189544033</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1730189544033</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Removed keyword driven methods for all the feature files except ExpenseRequestor. &#10;Added navigation to homepage on timesheet submission&#10;Uncommented expense code from step definition&#10;Uncommented feature files from runner">
+      <created>1730189690207</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1730189690207</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -353,7 +369,10 @@
     <MESSAGE value="Updated the Timeoff Page code&#10;Created new method in support class to select random PTO Dates and used the method in Timeoff page class&#10;Added Do While in case of Timeoff validation" />
     <MESSAGE value="Updated the runner file to include all the feature files" />
     <MESSAGE value="Update the TimeOffPage class. Open Calendar call was missing in the Do loop so included that" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update the TimeOffPage class. Open Calendar call was missing in the Do loop so included that" />
+    <MESSAGE value="Removed keyword driven methods for all the feature files except ExpenseRequestor. &#10;Added navigation to homepage on timesheet submission&#10;Uncommented expense code from step definition" />
+    <MESSAGE value="Removed keyword driven methods for all the feature files except ExpenseRequestor. &#10;Added navigation to homepage on timesheet submission&#10;Uncommented expense code from step definition&#10;Uncommented feature files from runner" />
+    <MESSAGE value="Commented Feature files in runner class to run directly from jenkins" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commented Feature files in runner class to run directly from jenkins" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -380,7 +399,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Pages/ExpenseRequestorPage.java</url>
-          <line>69</line>
+          <line>70</line>
           <option name="timeStamp" value="146" />
         </line-breakpoint>
       </breakpoints>
