@@ -31,10 +31,9 @@ public class TimeOffPage {
     }
     public void userSelectsPTODates()
     {
-        sm.clickByPath(timeoffLocators.openFromCalendar);
-       // sm.getListElementsbyPath(timeoffLocators.ToDateList,"15");
         do {
             String date[] = sm.generateDateForTimeOffRequest(timeoffLocators.selectFromDate, timeoffLocators.selectToDate);
+            sm.clickByPath(timeoffLocators.openFromCalendar);
             sm.clickByPath(date[0]);
             sm.clickByPath(timeoffLocators.confirmDate);
             sm.clickByPath(timeoffLocators.openToCalendar);
