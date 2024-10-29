@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Updated Maven Compiler version to 17 from 19">
+    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Updated the Timeoff Page code&#10;Created new method in support class to select random PTO Dates and used the method in Timeoff page class&#10;Added Do While in case of Timeoff validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/TimeoffLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/TimeoffLocators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/TimeOffPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/TimeOffPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/003-TimeoffFeature.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/003-TimeoffFeature.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/004-Timesheet.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/004-Timesheet.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -300,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1730101983944</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Updated the Timeoff Page code&#10;Created new method in support class to select random PTO Dates and used the method in Timeoff page class&#10;Added Do While in case of Timeoff validation">
+      <created>1730137566602</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1730137566602</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -332,7 +332,8 @@
     <MESSAGE value="click login button code was missing on spalsh screen. Added that code" />
     <MESSAGE value="Updated DeviceName capability" />
     <MESSAGE value="Updated Maven Compiler version to 17 from 19" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Maven Compiler version to 17 from 19" />
+    <MESSAGE value="Updated the Timeoff Page code&#10;Created new method in support class to select random PTO Dates and used the method in Timeoff page class&#10;Added Do While in case of Timeoff validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the Timeoff Page code&#10;Created new method in support class to select random PTO Dates and used the method in Timeoff page class&#10;Added Do While in case of Timeoff validation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -361,11 +362,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/Pages/ExpenseRequestorPage.java</url>
           <line>69</line>
           <option name="timeStamp" value="146" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Pages/TimeOffPage.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="149" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
