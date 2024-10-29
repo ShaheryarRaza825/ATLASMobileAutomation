@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Updated the runner file to include all the feature files">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/TimeOffPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/TimeOffPage.java" afterDir="false" />
+    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Update the TimeOffPage class. Open Calendar call was missing in the Do loop so included that">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/004-Timesheet.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/004-Timesheet.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/005-ExpenseRequestorFeature.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/005-ExpenseRequestorFeature.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1730187015847</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Update the TimeOffPage class. Open Calendar call was missing in the Do loop so included that">
+      <created>1730187855523</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1730187855523</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -341,14 +352,15 @@
     <MESSAGE value="Updated Maven Compiler version to 17 from 19" />
     <MESSAGE value="Updated the Timeoff Page code&#10;Created new method in support class to select random PTO Dates and used the method in Timeoff page class&#10;Added Do While in case of Timeoff validation" />
     <MESSAGE value="Updated the runner file to include all the feature files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the runner file to include all the feature files" />
+    <MESSAGE value="Update the TimeOffPage class. Open Calendar call was missing in the Do loop so included that" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update the TimeOffPage class. Open Calendar call was missing in the Do loop so included that" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java</url>
-          <line>379</line>
+          <line>272</line>
           <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

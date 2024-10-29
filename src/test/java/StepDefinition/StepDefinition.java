@@ -27,32 +27,7 @@ public class StepDefinition {
 
     @Given("user is present on {string} page")
     public void user_is_present_on_page(String keyword) {
-        System.out.println(keyword);
-        if(keyword.equals("login") )
-        {
-            lp.userIsPresentOnLoginPage();
-        }
-        else if (keyword .equals("splash") )
-        {
-            lp.userIsPresentOnSplashScreen();
-        }
-        else if(keyword.equals("dashboard"))
-        {
-            twp.userOnDashboard();
-        }
-        else if(keyword.equals("request timeoff"))
-        {
-            tp.UserIsPresentOnPTOPage();
-        }
-        else if(keyword.equals("timesheet"))
-        {
-            tsp.userIsPresentOnTimesheet();
-        }
-        else if(keyword.equals("edit timesheet"))
-        {
-            tsp.userPresentOnEditTimesheet();
-        }
-        else if(keyword.equals("expense dashboard"))
+      if(keyword.equals("expense dashboard"))
         {
             erp.userPresentOnExpensePage();
         }
@@ -60,23 +35,7 @@ public class StepDefinition {
 
     @Given("user enters value in {string} field")
     public void user_enters_value_in_field(String keyword) throws IOException {
-        if(keyword.equals("email"))
-        {
-            lp.setUserName("Email");
-        }
-        else if (keyword.equals("password"))
-        {
-            lp.setPassword("Password");
-        }
-        else if(keyword.equals("hours"))
-        {
-            tp.EnterHours("Hours1","Hours2");
-        }
-        else if(keyword.equals("PTOcomments"))
-        {
-            tp.enterCommentsForPTO();
-        }
-        else if(keyword.equals("expense title"))
+       if(keyword.equals("expense title"))
         {
             erp.enterExpenseTitle();
         }
@@ -95,51 +54,7 @@ public class StepDefinition {
     }
     @When("user clicks the {string} button")
     public void user_clicks_the_button(String keyword) throws InterruptedException {
-        if(keyword.equals("login") )
-        {
-            lp.loginToApp();
-        }
-        else if(keyword.equals("loginSplash") )
-        {
-            lp.SplashScreenLogin();
-        }
-        else if(keyword.equals("request timeoff")){
-           tp.UserNavigateToPTOPage();
-        }
-        else if(keyword.equals("add hours")){
-            tp.UserVisitAddHoursPage();
-        }
-        else if(keyword.equals("save")){
-            tp.UserSavesHours();
-        }
-        else if(keyword.equals("submit")){
-            tp.UserSubmitsPTO();
-        }
-        else if(keyword.equals("clockin"))
-        {
-            twp.UserClocksIn();
-        }
-        else if(keyword.equals("clockout"))
-        {
-            twp.UserClocksOut();
-        }
-        else if(keyword.equals("timesheet tab"))
-        {
-            tsp.navigateToTimesheetTab();
-        }
-        else if(keyword.equals("timesheet arrow"))
-        {
-            tsp.openTimeSheetList();
-        }
-        else if(keyword.equals("edit timesheet"))
-        {
-            tsp.editTimesheet();
-        }
-        else if(keyword.equals("update"))
-        {
-            tsp.updatTime();
-        }
-        else if(keyword.equals("expenses tab"))
+     if(keyword.equals("expenses tab"))
         {
             erp.navigateToExpenseTab();
         }
@@ -158,18 +73,9 @@ public class StepDefinition {
 
     }
 
-    /*@And("user selects option for {string}")
+    @And("user selects option for {string}")
     public void userSelectsOptionFor(String keyword) throws MalformedURLException {
-        if (keyword.equals("PTO")) {
-            tp.UserSelectsTimeOffType();
-        } else if (keyword.equals("PTODates")) {
-            tp.userSelectsPTODates();
-        } else if (keyword.equals("start time")) {
-            tsp.selectStartTime();
-        } else if (keyword.equals("end time")) {
-            tsp.selectEndTime();
-        }
-        else if(keyword.equals("date incurred")){
+        if(keyword.equals("date incurred")){
             erp.selectDateIncurred();
         }
         else if(keyword.equals("category")){
@@ -178,29 +84,16 @@ public class StepDefinition {
         else if(keyword.equals("attachment")){
             erp.selectAttachment();
         }
-    }*/
+    }
 
     @Then("PTO should be submitted successfully")
     public void ptoShouldBeSubmittedSuccessfully() {
         tp.ConfirmSubmissionOfPTO();
     }
-    @Then("user should be {string} successfully")
-    public void userShouldBeSuccessfully(String keyword) throws InterruptedException {
-
-        if(keyword.equals("logged in")){
-            lp.verifyUserLoggedIn();
-        }
-        else if(keyword.equals("clocked in")){
-            twp.UserClockedInSuccessfully();
-        }
-        else if(keyword.equals("clocked out")){
-            twp.UserClockedOutSuccessfully();
-        }
-
-    }
 
     @Then("timesheet is submitted successfully")
     public void timesheetIsSubmittedSuccessfully() {
+        twp.navigateToHomePage();
     }
 
     @And("Expense should be submitted")
@@ -425,6 +318,36 @@ public class StepDefinition {
     @Then("user selects option for end time")
     public void userSelectsOptionForEndTime() {
         tsp.selectEndTime();
+    }
+
+    @Then("user clicks the timesheet tab button")
+    public void userClicksTheTimesheetTabButton() {
+        tsp.navigateToTimesheetTab();
+    }
+
+    @And("user is present on timesheet page")
+    public void userIsPresentOnTimesheetPage() {
+        tsp.userIsPresentOnTimesheet();
+    }
+
+    @Then("user clicks the timesheet arrow button")
+    public void userClicksTheTimesheetArrowButton() {
+        tsp.openTimeSheetList();
+    }
+
+    @Then("user clicks the edit timesheet button")
+    public void userClicksTheEditTimesheetButton() {
+        tsp.editTimesheet();
+    }
+
+    @And("user is present on edit timesheet page")
+    public void userIsPresentOnEditTimesheetPage() {
+        tsp.userPresentOnEditTimesheet();
+    }
+
+    @And("user clicks the update timesheet button")
+    public void userClicksTheUpdateTimesheetButton() {
+        tsp.updatTime();
     }
 }
 

@@ -1,7 +1,7 @@
 Feature: Expense Requestor
   Scenario: Submit an expense claim
 
-    Given user is present on "dashboard" page
+    Given user is present on dashboard page
     Then user clicks the "expenses tab" button
     And user is present on "expense dashboard" page
     Then user clicks the "new expense claim" button
