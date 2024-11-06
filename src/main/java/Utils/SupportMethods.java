@@ -1,11 +1,9 @@
 package Utils;
 
-import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.ajbrown.namemachine.NameGenerator;
 import org.openqa.selenium.*;
-import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
@@ -24,6 +22,9 @@ import java.util.Properties;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import Utils.LocatorType;
+import Utils.LocatorHelper;
+
 
 public class SupportMethods {
 
@@ -40,13 +41,62 @@ public class SupportMethods {
 
     }
 
+    protected   WebElement findElement(LocatorType locatorType,String path)
+    {
+        switch(locatorType)
+        {
+            case ANDROID_XPATH:
+                new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
+                        .visibilityOfElementLocated(By.xpath(path)));
+                return androidDriver.findElement(By.xpath(path));
+
+            case ANDROID_ID:
+                new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
+                        .visibilityOfElementLocated(By.id(path)));
+                return androidDriver.findElement(By.id(path));
+
+            case WEB_XPATH:
+                new WebDriverWait(webDriver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
+                        .visibilityOfElementLocated(By.xpath(path)));
+                return webDriver.findElement(By.xpath(path));
+
+            default:
+                throw new IllegalArgumentException("Unknown locator type: " + locatorType);
+        }
+    }
+    protected List<WebElement> findListElements(LocatorType locatorType, String path) {
+        List<WebElement> listOfElements;
+        WebDriverWait wait;
+        switch (locatorType)
+        {
+            case ANDROID_XPATH:
+                wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+                listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(path)));
+                return listOfElements;
+
+            case ANDROID_ID:
+                wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
+                listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id(path)));
+                return listOfElements;
+
+                default:
+                throw new IllegalArgumentException("Unknown locator type: " + locatorType);
+        }
+    }
+    protected WebElement findElement(String path) {
+        // Get the locator type using UtilMethods
+        LocatorType locatorType = LocatorHelper.getLocatorType(path);
+        // Use the locatorType in the overloaded findElement method
+        return findElement(locatorType, path);
+    }
     public void waitForVisibilityByPath(String path) {
 
         if (path.contains("/hierarchy/") || path.contains("//android.view")) {
             new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout)).
                     until(d -> d.findElement(By.xpath(path)));
         } else if (path.contains("com.atlashxm")) {
-            new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout)).until(d -> d.findElement(By.id(path)));
+            new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout)).
+                    until(d -> d.findElement(By.id(path)));
         }
     }
     protected void implicitWait()
@@ -63,7 +113,7 @@ public class SupportMethods {
     {
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitTimeout));
     }*/
-    protected WebElement findElement(String path)
+   /* protected WebElement findElement(String path)
     {
         if (path.contains("/hierarchy/") || path.contains("//android.view")) {
             new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout)).until(ExpectedConditions
@@ -81,7 +131,7 @@ public class SupportMethods {
             return webDriver.findElement(By.xpath(path));
         }
             return null;
-    }
+    }*/
     protected  String getTextFromElement(String path)
     {
         String text = findElement(path).getText();
@@ -158,7 +208,7 @@ public class SupportMethods {
         return getTextFromElement(path);
     }
 
-    public void ScrollUp(String path, int scroll) {
+  /*  public void ScrollUp(String path, int scroll) {
         if (path.contains("/hierarchy/") || path.contains("//android.view")) {
             WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
             RemoteWebElement element = (RemoteWebElement) wait.until(d -> d.findElement(By.xpath(path)));
@@ -177,7 +227,7 @@ public class SupportMethods {
 
         }
 
-    }
+    }*/
 
     /*public void ScrollDown(String path, int scroll) {
         if (path.contains("/hierarchy/") || path.contains("//android.view")) {
@@ -197,12 +247,6 @@ public class SupportMethods {
 
         }
     }*/
-
-    public void selectDateFromCalendar(String path) {
-        WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
-        WebElement element = wait.until(d -> d.findElement(AppiumBy.accessibilityId(path)));
-        element.click();
-    }
 
     public void waitForElementToDisappear(String path) {
         System.out.println("wait for element to disappear");
@@ -251,8 +295,7 @@ public class SupportMethods {
         boolean imagePresent = false;
         while(!imagePresent && attempts <=5) {
             try {
-                new WebDriverWait(webDriver, Duration.ofSeconds(10)).until(ExpectedConditions
-                        .visibilityOfElementLocated(By.xpath(path)));
+               findElement(path);
                 WebElement image = webDriver.findElement(By.xpath(path));
                 imagePresent = image.isDisplayed();
                 imagePresent = true;
@@ -264,42 +307,32 @@ public class SupportMethods {
         }
     }
 
-    public void getListElementsbyPath(String path, String selectValue) {
-        if (path.contains("/hierarchy/") || path.contains("//android.view")) {
-            WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(Timeout));
-            List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(path)));
-            System.out.println("size of list is " + listOfElements.size());
-            for (WebElement e : listOfElements) {
-                System.out.println(e.getText());
-                if (e.getText().equals(selectValue)) {
-                    e.click();
-                    break;
-                }
-            }
-        }
-        else if(path.contains("com.atlashxm") || path.contains("android:id"))
-        {
-            WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(Timeout));
-            List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id(path)));
-            System.out.println("size of list is " + listOfElements.size());
-            for (WebElement e : listOfElements) {
-                System.out.println(e.getText());
-                if (e.getText().equals(selectValue)) {
-                    e.click();
-                    break;
-                }
-            }
-        }
+    protected List<WebElement> findListElements(String path)
+    {
+        LocatorType locatorType = LocatorHelper.getLocatorType(path);
+        List<WebElement> listOfElements = findListElements(locatorType,path);
+        return listOfElements;
     }
+    public void getListElementsbyPath(String path, String selectValue) {
+            List<WebElement> listOfElements = findListElements(path);
+            /*WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(Timeout));
+            List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(path)));*/
+            System.out.println("size of list is " + listOfElements.size());
+            for (WebElement e : listOfElements) {
+                System.out.println(e.getText());
+                if (e.getText().equals(selectValue)) {
+                    e.click();
+                    break;
+                }
+            }
+        }
 
     public void SelectListElementsbyPath(String path, String selectValue) {
         int attempts = 0;
         boolean elementClicked = false;
         while (!elementClicked && attempts <= 5) {
             try {
-                if (path.contains("/hierarchy/") || path.contains("//android.view")) {
-                    WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
-                    List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(path)));
+                List<WebElement> listOfElements = findListElements(path);
                     System.out.println("size of list is " + listOfElements.size());
                     for (WebElement e : listOfElements) {
                         System.out.println(e.getText());
@@ -311,21 +344,6 @@ public class SupportMethods {
                     }
                     break;
 
-                } else if (path.contains("com.atlashxm") || path.contains("android:id")) {
-                    WebDriverWait wait = new WebDriverWait(androidDriver, Duration.ofSeconds(Timeout));
-                    List<WebElement> listOfElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id(path)));
-                    System.out.println("size of list is " + listOfElements.size());
-                    for (WebElement e : listOfElements) {
-                        wait.until((ExpectedConditions.elementToBeClickable(By.id(path))));
-                        System.out.println(e.getText());
-                        if (e.getText().equals(selectValue)) {
-                            e.click();
-                            elementClicked = true;
-                            break;
-                        }
-                    }
-                    break;
-                }
             } catch (Exception e) {
                 System.out.println("Exception Message: "+e.getMessage());
                 attempts++;

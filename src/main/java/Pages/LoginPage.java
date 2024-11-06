@@ -17,14 +17,13 @@ public class LoginPage {
     public LoginPage() throws MalformedURLException {
 
     }
-    public void SplashScreenLogin()
-    {
+    public void SplashScreenLogin() {
         sm.waitForVisibilityByPath(loginLocators.pathSplashScreenLoginBtn);
-        sm.clickByPath(loginLocators.pathSplashScreenLoginBtn);
-    }
-    public void userIsPresentOnSplashScreen() {
         System.out.println("Checking for Splash Screen now");
         sm.verifyElement(loginLocators.pathSplashScreenLoginBtn, "Log in");
+    }
+    public void ClickLoginOnSpalshScreen() {
+
         sm.clickByPath(loginLocators.pathSplashScreenLoginBtn);
         System.out.println("Splash Screen Page Verified");
     }

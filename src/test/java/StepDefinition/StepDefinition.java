@@ -104,12 +104,12 @@ public class StepDefinition {
     }
     @Given("user is present on splash screen page")
     public void user_is_present_on_splash_screen_page() {
-        lp.userIsPresentOnSplashScreen();
+        lp.SplashScreenLogin();
     }
 
     @Then("user clicks the login button button on splash screen")
     public void user_clicks_the_login_button_button_on_splash_screen() {
-        lp.SplashScreenLogin();
+        lp.ClickLoginOnSpalshScreen();
     }
 
     @Given("user is present on login page")
@@ -348,6 +348,118 @@ public class StepDefinition {
     @And("user clicks the update timesheet button")
     public void userClicksTheUpdateTimesheetButton() {
         tsp.updatTime();
+    }
+
+    @When("user navigates to More Tab")
+    public void user_navigates_to_more_tab() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Given("user is present on More Tab")
+    public void user_is_present_on_more_tab() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Then("user clicks the My Account option")
+    public void user_clicks_the_my_account_option() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Given("user is present on My Account page")
+    public void user_is_present_on_my_account_page() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Then("user clicks the Profile option")
+    public void user_clicks_the_profile_option() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Given("user is present on My Account Profile page")
+    public void user_is_present_on_my_account_profile_page() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Then("user clicks the Contact Details tab")
+    public void user_clicks_the_contact_details_tab() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Then("user clicks the edit icon to edit contact details")
+    public void user_clicks_the_edit_icon_to_edit_contact_details() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Then("user updates the contact details")
+    public void user_updates_the_contact_details() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @When("user saves the details updated contact details should be displayed")
+    public void user_saves_the_details_updated_contact_details_should_be_displayed() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Then("user clicks the Social Media Details tab")
+    public void userClicksTheSocialMediaDetailsTab() {
+    }
+
+    @Then("user clicks the edit icon to edit linkedin details")
+    public void userClicksTheEditIconToEditLinkedinDetails() {
+    }
+
+    @Then("user updates the linkedin details")
+    public void userUpdatesTheLinkedinDetails() {
+    }
+
+    @When("user saves the details updated linkedin details should be displayed")
+    public void userSavesTheDetailsUpdatedLinkedinDetailsShouldBeDisplayed() {
+    }
+
+    @Then("user clicks the edit icon to edit website details")
+    public void userClicksTheEditIconToEditWebsiteDetails() {
+    }
+
+    @Then("user updates the website details")
+    public void userUpdatesTheWebsiteDetails() {
+    }
+
+    @When("user saves the details updated website details should be displayed")
+    public void userSavesTheDetailsUpdatedWebsiteDetailsShouldBeDisplayed() {
+    }
+
+    @Then("user goes back to My Account page")
+    public void userGoesBackToMyAccountPage() {
+    }
+
+    @Then("user clicks the Emergency Contact options")
+    public void userClicksTheEmergencyContactOptions() {
+    }
+
+    @Given("user is present on My Account Emergency page")
+    public void userIsPresentOnMyAccountEmergencyPage() {
+    }
+
+    @Then("user clicks the edit icon to edit emergency details")
+    public void userClicksTheEditIconToEditEmergencyDetails() {
+    }
+
+    @Then("user updates the emergency details")
+    public void userUpdatesTheEmergencyDetails() {
+    }
+
+    @When("user saves the details updated emergency details should be displayed")
+    public void userSavesTheDetailsUpdatedEmergencyDetailsShouldBeDisplayed() {
     }
 }
 

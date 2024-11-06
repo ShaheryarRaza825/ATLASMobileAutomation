@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Uncommented all feature file">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Locators/MoreTabLocators.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Pages/MorePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/LocatorHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/LocatorType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Features/006-MoreTab.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/TimesheetLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/TimesheetLocators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/001b-LoginFeature.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/001b-LoginFeature.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/002-ClockIn.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/002-ClockIn.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/003-TimeoffFeature.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/003-TimeoffFeature.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/006-Clockout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/007-Clockout.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,32 +69,15 @@
       <recent name="Hooks" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestRunner">
-    <configuration name="Feature: 001-LoginFeature" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="Scenario: Edit Contact Details" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/001-LoginFeature.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/006-MoreTab.feature" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="AtlasMobileJava" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: 001-LoginFeature" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Feature: LoginFeature" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/LoginFeature.feature" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="AtlasMobileJava" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: LoginFeature" />
+      <option name="NAME_FILTER" value="^Edit Contact Details$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Edit Contact Details$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Edit Contact Details" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -94,6 +92,26 @@
     <configuration name="Scenario: Login to Atlas App (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/001-LoginFeature.feature" />
+      <option name="GLUE" value="StepDefinition" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="AtlasMobileJava" />
+      <option name="NAME_FILTER" value="^Login to Atlas App$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Login to Atlas App$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Login to Atlas App" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Login to Atlas App (2)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/001b-LoginFeature.feature" />
       <option name="GLUE" value="StepDefinition" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="AtlasMobileJava" />
@@ -147,7 +165,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Edit Contact Details" />
         <item itemvalue="JUnit.TestRunner" />
+        <item itemvalue="Cucumber Java.Scenario: Login to Atlas App (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -342,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1730203809516</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Uncommented all feature file">
+      <created>1730357549533</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1730357549533</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -395,11 +422,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/Pages/WSEOnboardingPage.java</url>
           <line>175</line>
           <option name="timeStamp" value="127" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java</url>
-          <line>151</line>
-          <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Pages/InviteWSEtoAtlasPage.java</url>

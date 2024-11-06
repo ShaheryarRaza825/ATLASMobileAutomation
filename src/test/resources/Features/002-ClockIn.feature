@@ -1,6 +1,4 @@
-Feature:
- Clockin
-
+Feature: Clockin
   Scenario: Clock in on ATLAS
 
     Given user is present on dashboard page

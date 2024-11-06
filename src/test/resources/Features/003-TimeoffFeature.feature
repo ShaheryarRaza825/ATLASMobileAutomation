@@ -1,6 +1,4 @@
-Feature:
-PTO Submission
-
+Feature: PTO Submission
   Scenario: Submit a PTO Request
 
     When user clicks the request timeoff button
