@@ -22,7 +22,7 @@ import java.util.Properties;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import Utils.LocatorType;
+import Utils.LocatorTypeEnum;
 import Utils.LocatorHelper;
 
 
@@ -41,7 +41,7 @@ public class SupportMethods {
 
     }
 
-    protected   WebElement findElement(LocatorType locatorType,String path)
+    protected   WebElement findElement(LocatorTypeEnum locatorType,String path)
     {
         switch(locatorType)
         {
@@ -64,7 +64,7 @@ public class SupportMethods {
                 throw new IllegalArgumentException("Unknown locator type: " + locatorType);
         }
     }
-    protected List<WebElement> findListElements(LocatorType locatorType, String path) {
+    protected List<WebElement> findListElements(LocatorTypeEnum locatorType, String path) {
         List<WebElement> listOfElements;
         WebDriverWait wait;
         switch (locatorType)
@@ -85,7 +85,7 @@ public class SupportMethods {
     }
     protected WebElement findElement(String path) {
         // Get the locator type using UtilMethods
-        LocatorType locatorType = LocatorHelper.getLocatorType(path);
+        LocatorTypeEnum locatorType = LocatorHelper.getLocatorType(path);
         // Use the locatorType in the overloaded findElement method
         return findElement(locatorType, path);
     }
@@ -189,7 +189,7 @@ public class SupportMethods {
     }
 
     public String getvaluesfromconfigfile(String value) throws IOException {
-        FileReader fr = new FileReader("C:\\Users\\FaizanJunani\\Desktop\\Appium Automation\\AtlasMobileWithoutBrowserStack\\src\\Config.properties");
+        FileReader fr = new FileReader("src/main/resources/Config.properties");
         Properties prop = new Properties();
         prop.load(fr);
         String valueconfig = prop.getProperty(value);
@@ -201,6 +201,10 @@ public class SupportMethods {
             if (getTextFromElement(path).equals(value)) {
                 clickByPath(path);
             }
+    }
+    public void checkElementSelected(String path)
+    {
+        softAssert.assertTrue(findElement(path).isSelected(),"Element is not selected");
     }
 
     public String getElementText(String path) {
@@ -309,7 +313,7 @@ public class SupportMethods {
 
     protected List<WebElement> findListElements(String path)
     {
-        LocatorType locatorType = LocatorHelper.getLocatorType(path);
+        LocatorTypeEnum locatorType = LocatorHelper.getLocatorType(path);
         List<WebElement> listOfElements = findListElements(locatorType,path);
         return listOfElements;
     }

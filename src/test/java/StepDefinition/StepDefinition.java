@@ -21,7 +21,7 @@ public class StepDefinition {
     TimesheetPage tsp = new TimesheetPage();
     ExpenseRequestorPage erp = new ExpenseRequestorPage();
     WSEOnboardingPage wop = new WSEOnboardingPage();
-
+    MorePage mp = new MorePage();
     public StepDefinition() throws MalformedURLException {
     }
 
@@ -169,7 +169,6 @@ public class StepDefinition {
     @When("user is present on request timeoff page")
     public void user_is_present_on_request_timeoff_page() {
         tp.UserIsPresentOnPTOPage();
-
     }
 
     @When("user selects option for PTO")
@@ -352,74 +351,67 @@ public class StepDefinition {
 
     @When("user navigates to More Tab")
     public void user_navigates_to_more_tab() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       mp.navigateToMoreTab();
     }
 
     @Given("user is present on More Tab")
     public void user_is_present_on_more_tab() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        mp.userIsPresentOnMoreTab("My Account");
     }
 
     @Then("user clicks the My Account option")
     public void user_clicks_the_my_account_option() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       mp.navigateToMoreMyAccount();
     }
 
     @Given("user is present on My Account page")
     public void user_is_present_on_my_account_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        mp.userIsPresentOnMyAccount("My Account");
     }
 
     @Then("user clicks the Profile option")
     public void user_clicks_the_profile_option() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        mp.navigateToProfile();
     }
 
     @Given("user is present on My Account Profile page")
     public void user_is_present_on_my_account_profile_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        mp.userIsPresentOnProfileTab("Profile");
     }
 
     @Then("user clicks the Contact Details tab")
     public void user_clicks_the_contact_details_tab() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        mp.navigateToContactDetails();
     }
 
     @Then("user clicks the edit icon to edit contact details")
     public void user_clicks_the_edit_icon_to_edit_contact_details() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        mp.editContactDetails("automationemail@mail.com");
     }
 
     @Then("user updates the contact details")
     public void user_updates_the_contact_details() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        mp.updateContactDetails();
     }
 
     @When("user saves the details updated contact details should be displayed")
     public void user_saves_the_details_updated_contact_details_should_be_displayed() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @Then("user clicks the Social Media Details tab")
     public void userClicksTheSocialMediaDetailsTab() {
+        mp.navigateToSocialMediaDetails();
     }
 
     @Then("user clicks the edit icon to edit linkedin details")
     public void userClicksTheEditIconToEditLinkedinDetails() {
+        mp.editLinkedInDetails("https://www.linkedin.com.auto");
     }
 
     @Then("user updates the linkedin details")
     public void userUpdatesTheLinkedinDetails() {
+        mp.updateLinkedInDetails();
     }
 
     @When("user saves the details updated linkedin details should be displayed")
@@ -428,10 +420,12 @@ public class StepDefinition {
 
     @Then("user clicks the edit icon to edit website details")
     public void userClicksTheEditIconToEditWebsiteDetails() {
+        mp.editWebsiteDetails("https://www.automation.com");
     }
 
     @Then("user updates the website details")
     public void userUpdatesTheWebsiteDetails() {
+        mp.updateWebsiteDetails();
     }
 
     @When("user saves the details updated website details should be displayed")
@@ -440,6 +434,7 @@ public class StepDefinition {
 
     @Then("user goes back to My Account page")
     public void userGoesBackToMyAccountPage() {
+
     }
 
     @Then("user clicks the Emergency Contact options")
