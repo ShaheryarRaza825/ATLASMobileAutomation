@@ -30,7 +30,7 @@ public class LoginPage {
     public void userIsPresentOnLoginPage() {
         System.out.println("Checking for Login Page now");
         sm.verifyElement
-                (loginLocators.userPresentOnLogin,"Please enter your email and password to log in.");
+                (loginLocators.userPresentOnLogin,"Sign in with your email and password to continue");
         //utils.TakeScreenshot("C:\\Users\\FaizanJunani\\Desktop\\AutomationTraining\\TrainingProject-2\\TrainingProject\\TEST.png");
         System.out.println("Login Page Verified");
     }

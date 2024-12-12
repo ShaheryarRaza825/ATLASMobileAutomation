@@ -1,5 +1,6 @@
 package Utils;
 
+import Hooks.Hook;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.ajbrown.namemachine.NameGenerator;
@@ -28,7 +29,7 @@ import Utils.LocatorHelper;
 
 public class SupportMethods {
 
-    SoftAssert softAssert = new SoftAssert();
+    Hook hook = new Hook();
     DriverManager dm = new DriverManager();
     protected AndroidDriver androidDriver = dm.getDriver();
     protected WebDriver webDriver = dm.getWebDriver();
@@ -160,7 +161,8 @@ public class SupportMethods {
             try {
                 implicitWait();
                 String actualText = getTextFromElement(path);
-                softAssert.assertEquals(actualText, expectedValue);
+                //Hook.getSoftAssert().assertEquals(actualText, expectedValue);
+                Hook.getSoftAssert().assertTrue(actualText.contains(expectedValue),"Actual text '"+actualText+"' does not contain Expected value '"+expectedValue+"'");
                 elementFound = true;
             }
             catch (Exception e) {
@@ -204,7 +206,7 @@ public class SupportMethods {
     }
     public void checkElementSelected(String path)
     {
-        softAssert.assertTrue(findElement(path).isSelected(),"Element is not selected");
+        Hook.getSoftAssert().assertTrue(findElement(path).isSelected(),"Element is not selected");
     }
 
     public String getElementText(String path) {

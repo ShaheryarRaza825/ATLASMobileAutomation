@@ -47,12 +47,12 @@ public class DriverManager {
     }
     public static WebDriver getWebDriver() {
             if (webDriver == null) {
-                ChromeOptions options = new ChromeOptions();
+              /*  ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
                 //options.addArguments("--headless=new");
                 webDriver = new ChromeDriver(options);
                 webDriver.manage().window().maximize();
-                webDriver.navigate().to("https://core-uat.atlasbyelements.com/");
+                webDriver.navigate().to("https://core-uat.atlasbyelements.com/");*/
             }
             return webDriver;
         }

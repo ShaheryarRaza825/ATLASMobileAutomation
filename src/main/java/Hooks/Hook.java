@@ -19,7 +19,12 @@ public class Hook {
     //public static AndroidDriver driver;
     static SoftAssert softAssert = new SoftAssert();
 
+
     public Hook() throws MalformedURLException {
+    }
+    // Method to add assertions in step definitions
+    public static SoftAssert getSoftAssert() {
+        return softAssert;
     }
     @BeforeAll
     public static void beforeAll() throws IOException {
@@ -42,7 +47,7 @@ public class Hook {
     }
 
     @AfterAll
-    public static void Assert()
+    public static void AfterAll()
     {
         softAssert.assertAll();
         //getDriver().close();
