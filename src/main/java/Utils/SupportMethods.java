@@ -150,8 +150,15 @@ public class SupportMethods {
     }
     public void sendKeysByPath(String path, String value) {
         implicitWait();
-        findElement(path);
-        elementSendKeys(path,value);
+        if(findElement(path).isEnabled()){
+            elementSendKeys(path,value);
+        }
+        else
+        {
+            return;
+
+        }
+
     }
 
     public void verifyElement(String path, String expectedValue) {
@@ -656,12 +663,14 @@ public class SupportMethods {
                     String formattedToDate = String.format("%02d", toDate.getDayOfMonth());
                     // Construct XPath
                     toDateXPath = String.format(date2, formattedToDate, month, year);
+                    System.out.println(toDateXPath);
                 }
 
                 // Format days for XPath
                 String formattedFromDate = String.format("%02d", fromDate.getDayOfMonth());
                 // Construct XPath
                 fromDateXPath = String.format(date1, formattedFromDate, month, year);
+                System.out.println(fromDateXPath);
 
                 // If "toDate" is used, ensure "fromDate" is before "toDate"
             } while (date2 != null && !fromDate.isBefore(toDate));

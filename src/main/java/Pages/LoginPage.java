@@ -44,6 +44,17 @@ public class LoginPage {
         System.out.println(password);
         sm.sendKeysByPath(loginLocators.password,pass);
     }
+
+    public void setMangerUserName(String userName) throws IOException {
+        System.out.println(userName);
+        sm.sendKeysByPath(loginLocators.userName, userName);
+
+    }
+
+    public void setManagerPassword(String password) throws IOException {
+        System.out.println(password);
+        sm.sendKeysByPath(loginLocators.password, password);
+    }
     public void loginToApp()
     {
         sm.clickByPath(loginLocators.loginBtn);
@@ -53,6 +64,16 @@ public class LoginPage {
     public void verifyUserLoggedIn() throws InterruptedException {
         //Thread.sleep(5000);
         sm.verifyElement(loginLocators.userOnDashboard, "Hi");
+    }
+    public void verifyUserInvalid(){
+        sm.verifyElement(loginLocators.patherromsg, "The email or password you entered is invalid.");
+    }
+
+    public void verifyUsernotLoggedIn() throws InterruptedException {
+        //Thread.sleep(5000);
+        sm.verifyElement(loginLocators.pathForMangerloginError, "This feature is under development. We will be up and coming soon");
+        sm.clickByPath(loginLocators.pathlogout);
+
     }
 
 }

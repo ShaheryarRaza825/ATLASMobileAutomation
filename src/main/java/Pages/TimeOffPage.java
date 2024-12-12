@@ -34,10 +34,12 @@ public class TimeOffPage {
         do {
             String date[] = sm.generateDatesForCalendar(timeoffLocators.selectFromDate, timeoffLocators.selectToDate);
             sm.clickByPath(timeoffLocators.openFromCalendar);
+            sm.clickByPath(timeoffLocators.selectFromDate);
             sm.clickByPath(date[0]);
             sm.clickByPath(timeoffLocators.confirmDate);
             sm.clickByPath(timeoffLocators.openToCalendar);
             sm.clickByPath(date[1]);
+            sm.clickByPath(timeoffLocators.selectToDate);
             sm.clickByPath(timeoffLocators.confirmDate);
         }
             while(sm.getElementText(timeoffLocators.validationForAppliedTimeOff).equals("*You cannot request leave on days you have already applied for time off"));
