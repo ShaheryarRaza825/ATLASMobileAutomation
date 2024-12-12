@@ -13,5 +13,10 @@ public class LoginLocators {
      //public String pathSplashScreenLogin = "com.atlashxm.trng:id/intro_textView";
      public String pathSplashScreenLoginBtn = "com.atlashxm.uat:id/btnContinue";
 
+     public String pathlogout = "com.atlashxm.uat:id/btn_logout";
+
+     public String pathForMangerloginError = "com.atlashxm.uat:id/tv_disclaimer_note";
+
+     public  String patherromsg ="com.atlashxm.uat:id/error_message";
 }
 

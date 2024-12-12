@@ -461,5 +461,27 @@ public class StepDefinition {
     @When("user saves the details updated emergency details should be displayed")
     public void userSavesTheDetailsUpdatedEmergencyDetailsShouldBeDisplayed() {
     }
+
+    @And("user enters email {string}")
+    public void userEntersEmail(String Email) throws IOException {
+        lp.setMangerUserName(Email);
+    }
+
+    @And("user enters password {string}")
+    public void userEntersPassword(String Password) throws IOException {
+        lp.setManagerPassword(Password);
+    }
+
+    @Then("user should be not be logged in successfully")
+    public void userShouldBeNotBeLoggedInSuccessfully() throws InterruptedException {
+        lp.verifyUsernotLoggedIn();
+
+    }
+
+    @Then("user should be logged in successfully due to credentials")
+    public void userShouldBeLoggedInSuccessfullyDueToCredentials() {
+        lp.verifyUserInvalid();
+
+    }
 }
 
