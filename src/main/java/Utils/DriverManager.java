@@ -29,13 +29,13 @@ public class DriverManager {
         //will automatically be covered through UiAutomator2Options
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2); //optional- if it's not mentioned then it fine too as it
         //will automatically be covered through UiAutomator2Options
-        options.setDeviceName("emulator-5554");
+        options.setDeviceName("743f64f0");
         //options.setDeviceName("emulator-5554");
         //options.noReset();
         options.setFullReset(true);
        // options.setApp("C:\\Users\\FaizanJunani\\Desktop\\Appium Automation\\AtlasMobileJava\\src\\test\\resources\\apps\\app-UAT-debug 25.apk");
         //options.setApp("C:\\Users\\FaizanJunani\\Desktop\\Appium Automation\\AtlasMobileJava\\src\\test\\resources\\apps\\app-UAT-5June2024.apk");
-        options.setApp("C:\\Users\\Shaheryar\\Downloads\\app-UAT-debug.apk");
+        options.setApp("C:\\Users\\FaizanJunani\\Downloads\\app-UAT-debug.apk");
         System.out.println("App Setup Done");
         options.autoGrantPermissions();
         System.out.println("Permissions Granted");
@@ -51,9 +51,9 @@ public class DriverManager {
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
                 //options.addArguments("--headless=new");
-              //  webDriver = new ChromeDriver(options);
-              //  webDriver.manage().window().maximize();
-               // webDriver.navigate().to("https://core-uat.atlasbyelements.com/");
+                webDriver = new ChromeDriver(options);
+                webDriver.manage().window().maximize();
+                webDriver.navigate().to("https://core-uat.atlasbyelements.com/");
             }
             return webDriver;
         }
