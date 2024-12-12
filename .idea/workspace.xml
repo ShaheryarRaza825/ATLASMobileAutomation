@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Added Feature file for More Tab&#10;Added Page file for More Tab&#10;Added Locator Helper and Locator Type classes in Utils&#10;Update the Find Element and Find List of Elements methods by using Enums">
+    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Updated location of Config file to src/main/resources&#10;Updated path on line 192 in Support Methods class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/MoreTabLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/MoreTabLocators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/MorePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/MorePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/LocatorHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/LocatorHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/LocatorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/LocatorTypeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,11 +53,14 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\FaizanJunani\Desktop\Appium Automation\AtlasMobileWithoutBrowserStack\src\main\resources" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Hooks" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Edit Contact Details">
+  <component name="RunManager">
     <configuration name="Scenario: Edit Contact Details" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/006-MoreTab.feature" />
@@ -368,7 +367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1730894795491</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Updated location of Config file to src/main/resources&#10;Updated path on line 192 in Support Methods class">
+      <created>1733739488744</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1733739488744</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -383,7 +389,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dependency added for appium&#10;class created for appium connection" />
     <MESSAGE value="Code Added for Android Driver setup" />
     <MESSAGE value="Added code for Utils &#10;Added Locators" />
     <MESSAGE value="updated support methods class" />
@@ -408,7 +413,8 @@
     <MESSAGE value="Commented Feature files in runner class to run directly from jenkins" />
     <MESSAGE value="Uncommented all feature file" />
     <MESSAGE value="Added Feature file for More Tab&#10;Added Page file for More Tab&#10;Added Locator Helper and Locator Type classes in Utils&#10;Update the Find Element and Find List of Elements methods by using Enums" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Feature file for More Tab&#10;Added Page file for More Tab&#10;Added Locator Helper and Locator Type classes in Utils&#10;Update the Find Element and Find List of Elements methods by using Enums" />
+    <MESSAGE value="Updated location of Config file to src/main/resources&#10;Updated path on line 192 in Support Methods class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated location of Config file to src/main/resources&#10;Updated path on line 192 in Support Methods class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -9,9 +9,9 @@ import org.junit.runner.RunWith;
         features =
         {
                 "src/test/resources/Features/001b-LoginFeature.feature",
-                "src/test/resources/Features/006-MoreTab.feature"
-                /*"src/test/resources/Features/002-ClockIn.feature",
-                "src/test/resources/Features/003-TimeoffFeature.feature",
+                //"src/test/resources/Features/006-MoreTab.feature"
+                "src/test/resources/Features/002-ClockIn.feature",
+        /*"src/test/resources/Features/003-TimeoffFeature.feature",
                 "src/test/resources/Features/004-Timesheet.feature",
                 "src/test/resources/Features/005-ExpenseRequestorFeature.feature",
                 "src/test/resources/Features/007-Clockout.feature",*/
