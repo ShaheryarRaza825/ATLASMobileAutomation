@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Uncommented all feature file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Locators/MoreTabLocators.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Pages/MorePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/LocatorHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/LocatorType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Features/006-MoreTab.feature" afterDir="false" />
+    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Add two Negative cases for login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/TimesheetLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Locators/TimesheetLocators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/001b-LoginFeature.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/001b-LoginFeature.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/002-ClockIn.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/002-ClockIn.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/003-TimeoffFeature.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/003-TimeoffFeature.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/006-Clockout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/007-Clockout.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +54,7 @@
       <recent name="Hooks" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Edit Contact Details">
     <configuration name="Scenario: Edit Contact Details" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/006-MoreTab.feature" />
@@ -415,7 +400,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/StepDefinition/StepDefinition.java</url>
-          <line>272</line>
+          <line>271</line>
           <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
