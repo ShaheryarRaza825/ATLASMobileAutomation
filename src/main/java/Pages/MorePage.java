@@ -4,6 +4,7 @@ import Locators.MoreTabLocators;
 import Utils.SupportMethods;
 
 import java.net.MalformedURLException;
+import java.security.PublicKey;
 
 public class MorePage {
 
@@ -42,16 +43,32 @@ public class MorePage {
     }
     public void editContactDetails(String txtPrimaryEmail)
     {
+        // sm.clickByPath(mtl.btnEditContactDetails);
+        sm.sendKeysByPath(mtl.txtEditDetails,txtPrimaryEmail);
+
+    }
+
+    public void editInContactDetails(String txtPrimaryEmail)
+    {
         sm.clickByPath(mtl.btnEditContactDetails);
         sm.sendKeysByPath(mtl.txtEditDetails,txtPrimaryEmail);
+
     }
-    public void updateContactDetails()
-    {
+    public void updateContactDetails() {
         sm.clickByPath(mtl.btnNext);
         sm.clickByPath(mtl.btnCalendarEffectiveChangeDate);
         sm.clickByPath(mtl.btnCalendarConfirmDate);
         sm.clickByPath(mtl.btnSaveChanges);
+
     }
+
+    public void updateInContactDetails() {
+        sm.clickByPath(mtl.btnNext);
+        sm.verifyElement(MoreTabLocators.errortext, "addreffffss");
+    }
+
+
+
     public void navigateToSocialMediaDetails()
     {
         sm.clickByPath(mtl.navigateToSocialMediaDetails);

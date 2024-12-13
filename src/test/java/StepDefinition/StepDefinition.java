@@ -27,7 +27,7 @@ public class StepDefinition {
 
     @Given("user is present on {string} page")
     public void user_is_present_on_page(String keyword) {
-      if(keyword.equals("expense dashboard"))
+        if(keyword.equals("expense dashboard"))
         {
             erp.userPresentOnExpensePage();
         }
@@ -35,7 +35,7 @@ public class StepDefinition {
 
     @Given("user enters value in {string} field")
     public void user_enters_value_in_field(String keyword) throws IOException {
-       if(keyword.equals("expense title"))
+        if(keyword.equals("expense title"))
         {
             erp.enterExpenseTitle();
         }
@@ -54,7 +54,7 @@ public class StepDefinition {
     }
     @When("user clicks the {string} button")
     public void user_clicks_the_button(String keyword) throws InterruptedException {
-     if(keyword.equals("expenses tab"))
+        if(keyword.equals("expenses tab"))
         {
             erp.navigateToExpenseTab();
         }
@@ -178,12 +178,12 @@ public class StepDefinition {
 
     @When("user selects option for PTODates")
     public void user_selects_option_for_PTODates() {
-            tp.userSelectsPTODates();
+        tp.userSelectsPTODates();
     }
 
     @When("user clicks the add hours button")
     public void user_clicks_the_add_hours_button() {
-       tp.UserVisitAddHoursPage();
+        tp.UserVisitAddHoursPage();
     }
 
     @When("user enters value in hours field")
@@ -193,7 +193,7 @@ public class StepDefinition {
 
     @When("user clicks the save button")
     public void user_clicks_the_save_button() {
-       tp.UserSavesHours();
+        tp.UserSavesHours();
     }
 
     @When("user enters value in PTOcomments field")
@@ -300,8 +300,8 @@ public class StepDefinition {
 
     @And("user clicks the homeaddress continue button")
     public void userClicksTheHomeaddressContinueButton() {
-            wop.continueToBankingTab();
-        }
+        wop.continueToBankingTab();
+    }
 
     @Then("user logsout of the application")
     public void userLogsoutOfTheApplication() {
@@ -351,7 +351,7 @@ public class StepDefinition {
 
     @When("user navigates to More Tab")
     public void user_navigates_to_more_tab() {
-       mp.navigateToMoreTab();
+        mp.navigateToMoreTab();
     }
 
     @Given("user is present on More Tab")
@@ -361,7 +361,7 @@ public class StepDefinition {
 
     @Then("user clicks the My Account option")
     public void user_clicks_the_my_account_option() {
-       mp.navigateToMoreMyAccount();
+        mp.navigateToMoreMyAccount();
     }
 
     @Given("user is present on My Account page")
@@ -386,7 +386,9 @@ public class StepDefinition {
 
     @Then("user clicks the edit icon to edit contact details")
     public void user_clicks_the_edit_icon_to_edit_contact_details() {
-        mp.editContactDetails("automationemail@mail.com");
+        mp.editContactDetails("automationemail@yopmail.com");
+
+
     }
 
     @Then("user updates the contact details")
@@ -477,6 +479,19 @@ public class StepDefinition {
     public void userShouldBeLoggedInSuccessfullyDueToCredentials() {
         lp.verifyUserInvalid();
 
+    }
+
+    @Then("user updates the incorrect contact details")
+    public void userUpdatesTheIncorrectcontactDetails() {
+
+        mp.updateInContactDetails();
+
+
+    }
+
+    @Then("user clicks the edit icon to edit incorrect contact details")
+    public void userClicksTheEditIconToEditIncorrectcontactDetails() {
+        mp.editInContactDetails("automationemail");
     }
 }
 

@@ -20,4 +20,6 @@ public class MoreTabLocators {
     public String btnEditWebsite = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ImageView[2]";
 
     public String navigateBackToMyAccount ="//android.widget.ImageButton[@content-desc=\"Navigate up\"]";
+
+    public static String errortext ="com.atlashxm.uat:id/errorText";
 }

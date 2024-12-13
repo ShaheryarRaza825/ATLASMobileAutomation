@@ -30,7 +30,8 @@ public class LoginPage {
     public void userIsPresentOnLoginPage() {
         System.out.println("Checking for Login Page now");
         sm.verifyElement
-                (loginLocators.userPresentOnLogin,"Sign in with your email and password to continue");
+                (loginLocators.userPresentOnLogin,"Sign in with your email and password \n" +
+                        "to continue");
         //utils.TakeScreenshot("C:\\Users\\FaizanJunani\\Desktop\\AutomationTraining\\TrainingProject-2\\TrainingProject\\TEST.png");
         System.out.println("Login Page Verified");
     }
@@ -58,8 +59,8 @@ public class LoginPage {
     public void loginToApp()
     {
         sm.clickByPath(loginLocators.loginBtn);
-       // System.out.println("Enter OTP");
-       // sm.sendKeysByPath(loginLocators.MFA,"123456");
+        // System.out.println("Enter OTP");
+        // sm.sendKeysByPath(loginLocators.MFA,"123456");
     }
     public void verifyUserLoggedIn() throws InterruptedException {
         //Thread.sleep(5000);

@@ -19,11 +19,10 @@ public class Hook {
     //public static AndroidDriver driver;
     static SoftAssert softAssert = new SoftAssert();
 
-
     public Hook() throws MalformedURLException {
     }
-    // Method to add assertions in step definitions
-    public static SoftAssert getSoftAssert() {
+    public static SoftAssert getSoftAssert()
+    {
         return softAssert;
     }
     @BeforeAll
@@ -32,7 +31,7 @@ public class Hook {
         DriverManager.getWebDriver();
         System.out.println("Hook Before All executed");
 
-       // writePropertiesToFile();
+        // writePropertiesToFile();
     }
     public static void writePropertiesToFile() throws IOException {
         SupportMethods sm = new SupportMethods();
@@ -47,14 +46,10 @@ public class Hook {
     }
 
     @AfterAll
-    public static void AfterAll()
+    public static void Assert()
     {
         softAssert.assertAll();
         //getDriver().close();
         System.out.println("Hook After Executed");
     }
-
-
-
-
 }
