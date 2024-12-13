@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Updated location of Config file to src/main/resources&#10;Updated path on line 192 in Support Methods class&#10;Pushing More Tab code logic">
+    <list default="true" id="3af2bc42-4b92-420c-bc1b-74b95d99d02c" name="Changes" comment="Update all code from Faizan Repo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hooks/Hook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/DriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/SupportMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -393,7 +390,14 @@
       <option name="project" value="LOCAL" />
       <updated>1733987977265</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Update all code from Faizan Repo">
+      <created>1734074233329</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1734074233329</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -408,7 +412,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added code for Utils &#10;Added Locators" />
     <MESSAGE value="updated support methods class" />
     <MESSAGE value="Add Login Page class&#10;Updated methods&#10;Added Feature file and setup feature file &#10;Added step definition data for Login page" />
     <MESSAGE value="Add Login Page class&#10;Updated methods&#10;Added Feature file and setup feature file &#10;Added step definition data for Login page&#10;Added step definition for Timeoff page&#10;Update Hooks class&#10;Added Driver Manager class" />
@@ -433,7 +436,8 @@
     <MESSAGE value="Added Feature file for More Tab&#10;Added Page file for More Tab&#10;Added Locator Helper and Locator Type classes in Utils&#10;Update the Find Element and Find List of Elements methods by using Enums" />
     <MESSAGE value="Updated location of Config file to src/main/resources&#10;Updated path on line 192 in Support Methods class" />
     <MESSAGE value="Updated location of Config file to src/main/resources&#10;Updated path on line 192 in Support Methods class&#10;Pushing More Tab code logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated location of Config file to src/main/resources&#10;Updated path on line 192 in Support Methods class&#10;Pushing More Tab code logic" />
+    <MESSAGE value="Update all code from Faizan Repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update all code from Faizan Repo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
